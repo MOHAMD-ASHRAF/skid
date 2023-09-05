@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:skid/features/auth/presentation/widgets/OTO_text_Feild_widget.dart';
 
-class OtpScreen extends StatelessWidget {
-  const OtpScreen({Key? key}) : super(key: key);
+class OtpPage extends StatelessWidget {
+  const OtpPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
