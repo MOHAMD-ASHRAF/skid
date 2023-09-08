@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:skid/core/component/defult_buton.dart';
+import 'package:skid/core/component/default_button.dart';
 import 'package:skid/core/constant/my_color.dart';
 import 'package:skid/core/constant/string.dart';
 import 'package:skid/features/auth/presentation/cubit/phone_auth_cubit.dart';
@@ -13,14 +13,7 @@ import 'package:skid/features/auth/presentation/widgets/flag_widget.dart';
 class EnterPhonePage extends StatelessWidget {
   EnterPhonePage({Key? key}) : super(key: key);
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
- // final TextEditingController phoneController = TextEditingController();
   late String phoneNumber ;
-  // void checkValidate(BuildContext context) {
-  //   if (_formKey.currentState!.validate()) {
-  //     Navigator.pushNamed(context, otpPage);
-  //   }
-  // }
-
   Future<void> _register(BuildContext context)async {
     if(!_formKey.currentState!.validate()){
       Navigator.pop(context);
@@ -127,7 +120,7 @@ class EnterPhonePage extends StatelessWidget {
                         Center(
                             child: defaultMaterialButton(
                                 text: 'send', onPressed: () {
-                                  showProgressIndicator(context);
+                                 showProgressIndicator(context);
                                   _register(context);
                             })
                         ),

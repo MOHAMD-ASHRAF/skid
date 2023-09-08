@@ -1,23 +1,30 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:skid/core/component/defult_buton.dart';
+import 'package:pinput/pinput.dart';
+import 'package:skid/core/component/default_button.dart';
 import 'package:skid/core/constant/string.dart';
 import 'package:skid/features/auth/presentation/cubit/phone_auth_cubit.dart';
-import 'package:skid/features/auth/presentation/widgets/OTO_text_Feild_widget.dart';
+
 
 class OtpPage extends StatelessWidget {
+  final phoneNumber;
   OtpPage({
     Key? key,
     this.phoneNumber,
   }) : super(key: key);
-  final phoneNumber;
-  TextEditingController c1 = TextEditingController();
-  TextEditingController c2 = TextEditingController();
-  TextEditingController c3 = TextEditingController();
-  TextEditingController c4 = TextEditingController();
-  TextEditingController c5 = TextEditingController();
-  TextEditingController c6 = TextEditingController();
+
+  late String otpCode;
+  final defaultPinTheme = PinTheme(
+    width: 56,
+    height: 56,
+    textStyle: TextStyle(fontSize: 20, color: Color.fromRGBO(30, 60, 87, 1), fontWeight: FontWeight.w600),
+    decoration: BoxDecoration(
+      border: Border.all(color: Color.fromRGBO(234, 239, 243, 1)),
+      borderRadius: BorderRadius.circular(20),
+    ),
+  );
+
 
   Widget _buildPhoneVerificationBloc() {
     return BlocListener<PhoneAuthCubit, PhoneAuthState>(
@@ -46,14 +53,9 @@ class OtpPage extends StatelessWidget {
     );
   }
 
+
   void _login(BuildContext context) {
-    BlocProvider.of<PhoneAuthCubit>(context).submitOTP(
-        c1.toString() +
-        c2.toString() +
-        c3.toString() +
-        c4.toString() +
-        c5.toString() +
-        c6.toString());
+    BlocProvider.of<PhoneAuthCubit>(context).submitOTP(otpCode);
   }
 
   @override
@@ -92,56 +94,49 @@ class OtpPage extends StatelessWidget {
                       const SizedBox(
                         height: 40,
                       ),
-                      const Text(
-                        "A OTP SENT TO 01022536565 ",
+                       Text(
+                        "A OTP SENT TO $phoneNumber ",
                         style: TextStyle(fontSize: 15, color: Colors.grey),
                       ),
                       const Text(
-                        "kind enter below  the 6 digitl code ",
+                        "kind enter below  the 6 digital code ",
                         style: TextStyle(fontSize: 15, color: Colors.grey),
                       ),
                       const SizedBox(
                         height: 20,
                       ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     
-                          OTPTextFeildWidget(
-                            controller: c1,
-                          ),
-                          OTPTextFeildWidget(
-                            controller: c2,
-                          ),
-                          OTPTextFeildWidget(
-                            controller: c3,
-                          ),
-                          OTPTextFeildWidget(
-                            controller: c4,
-                          ),
-                          OTPTextFeildWidget(
-                            controller: c5,
-                          ),
-                          OTPTextFeildWidget(
-                            controller: c6,
-                          ),
-                        ],
-                      )
+
+                      Pinput(
+                        length: 6,
+                        defaultPinTheme: defaultPinTheme,
+                        focusedPinTheme: defaultPinTheme.copyWith(
+                          decoration: defaultPinTheme.decoration!.copyWith(
+                            border: Border.all(color: Colors.green)
+                          )
+                        ),
+                        onCompleted: (pin) {
+                          otpCode = pin;
+                          print("Completed $otpCode");
+                        },
+                      ),
+
+
+                      const SizedBox(
+                        height: 20,
+                      ),
+                      defaultMaterialButton(
+                          text: 'verify',
+                          onPressed: () {
+                            showProgressIndicator(context);
+                            _login(context);
+                          }),
+                      _buildPhoneVerificationBloc(),
                     ],
                   ),
                 ),
               ),
             ),
           ),
-          const SizedBox(
-            height: 20,
-          ),
-          defaultMaterialButton(
-              text: 'verify',
-              onPressed: () {
-                showProgressIndicator(context);
-                _login(context);
-              }),
-          _buildPhoneVerificationBloc(),
         ],
       ),
     );
@@ -160,6 +155,7 @@ class OtpPage extends StatelessWidget {
     showDialog(
         context: context,
         barrierColor: Colors.white.withOpacity(0),
+
         barrierDismissible: false,
         builder: (context) {
           return alertDialog;
