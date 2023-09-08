@@ -2,14 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class OTPTextFeildWidget extends StatelessWidget {
-  const OTPTextFeildWidget({Key? key}) : super(key: key);
-
+    OTPTextFeildWidget({Key? key, required this.controller}) : super(key: key);
+   final TextEditingController controller;
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: 60,
       width: 58,
       child: TextFormField(
+        controller: controller,
         onChanged: (value){
           if(value.length == 1 ){
             FocusScope.of(context).nextFocus();

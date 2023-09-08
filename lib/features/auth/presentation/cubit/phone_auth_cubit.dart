@@ -11,7 +11,6 @@ class PhoneAuthCubit extends Cubit<PhoneAuthState> {
 
   Future<void> submitPhoneNumber(String phoneNumber) async {
     emit(LoadingState());
-
     await FirebaseAuth.instance.verifyPhoneNumber(
       phoneNumber: '+2$phoneNumber',
       timeout: const Duration(seconds: 15),
@@ -29,13 +28,13 @@ class PhoneAuthCubit extends Cubit<PhoneAuthState> {
 
   void verificationFailed(FirebaseAuthException error) {
     print('verificationFailed : ${error.toString()}');
-    emit(ErrorState(message: error.toString()));
+    emit(PhoneAuthErrorState(messageError: error.toString()));
   }
 
   void codeSent(String verificationId, int? resendToken) {
+    print('codeSent');
     this.verificationId = verificationId;
     emit(PhoneNumberSubmitedState());
-    print('codeSent');
   }
 
   void codeAutoRetrievalTimeout(String verificationId) {
@@ -44,7 +43,7 @@ class PhoneAuthCubit extends Cubit<PhoneAuthState> {
 
   Future<void> submitOTP(String otpCode) async {
     PhoneAuthCredential credential = PhoneAuthProvider.credential(
-        verificationId: this.verificationId, smsCode: otpCode);
+        verificationId: verificationId, smsCode: otpCode);
     await signIn(credential);
   }
 
@@ -53,7 +52,7 @@ class PhoneAuthCubit extends Cubit<PhoneAuthState> {
       await FirebaseAuth.instance.signInWithCredential(credential);
       emit(PhoneOTPVerifiedState());
     }catch(error){
-      emit(ErrorState(message: error.toString()));
+      emit(PhoneAuthErrorState(messageError: error.toString()));
     }
   }
 
@@ -63,6 +62,7 @@ class PhoneAuthCubit extends Cubit<PhoneAuthState> {
   }
 
   User getLoggedInUser(){
-    return FirebaseAuth.instance.currentUser!;
+    User firebaseUser = FirebaseAuth.instance.currentUser!;
+    return firebaseUser;
   }
 }

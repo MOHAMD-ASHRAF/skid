@@ -1,7 +1,11 @@
+// ignore_for_file: must_be_immutable
+
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:skid/core/component/defult_buton.dart';
 import 'package:skid/core/constant/my_color.dart';
 import 'package:skid/core/constant/string.dart';
+import 'package:skid/features/auth/presentation/cubit/phone_auth_cubit.dart';
 import 'package:skid/features/auth/presentation/widgets/background_widget.dart';
 import 'package:skid/features/auth/presentation/widgets/build_intro_text.dart';
 import 'package:skid/features/auth/presentation/widgets/flag_widget.dart';
@@ -9,12 +13,47 @@ import 'package:skid/features/auth/presentation/widgets/flag_widget.dart';
 class EnterPhonePage extends StatelessWidget {
   EnterPhonePage({Key? key}) : super(key: key);
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-  final TextEditingController phoneController = TextEditingController();
+ // final TextEditingController phoneController = TextEditingController();
+  late String phoneNumber ;
+  // void checkValidate(BuildContext context) {
+  //   if (_formKey.currentState!.validate()) {
+  //     Navigator.pushNamed(context, otpPage);
+  //   }
+  // }
 
-  void checkValidate(BuildContext context) {
-    if (_formKey.currentState!.validate()) {
-      Navigator.pushNamed(context, otpPage);
+  Future<void> _register(BuildContext context)async {
+    if(!_formKey.currentState!.validate()){
+      Navigator.pop(context);
+    }else{
+      Navigator.pop(context);
+          _formKey.currentState!.save();
+      BlocProvider.of<PhoneAuthCubit>(context).submitPhoneNumber(phoneNumber);
     }
+  }
+
+  Widget _buildPhoneNumberSubmitBloc() {
+    return BlocListener<PhoneAuthCubit, PhoneAuthState>(
+      listenWhen: (previous, current) {
+        return previous != current;
+      },
+      listener: (context, state) {
+         if (state is LoadingState) {
+          showProgressIndicator(context);
+        }  if (state is PhoneNumberSubmitedState) {
+          Navigator.pop(context);
+          Navigator.pushNamed(context, otpPage, arguments: phoneNumber);
+        }  if (state is PhoneAuthErrorState) {
+          Navigator.pop(context);
+          String message = (state).messageError;
+          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+            content: Text(message),
+            backgroundColor: Colors.black,
+            duration: Duration(seconds: 3),
+          ));
+        }
+      },
+      child: Container(),
+    );
   }
 
   @override
@@ -26,9 +65,14 @@ class EnterPhonePage extends StatelessWidget {
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
+              decoration: const BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(32),
+                    topLeft: Radius.circular(32)),
+              ),
               height: 280,
               width: double.infinity,
-              color: Colors.white,
               child: Padding(
                 padding: const EdgeInsets.all(20),
                 child: Form(
@@ -45,11 +89,12 @@ class EnterPhonePage extends StatelessWidget {
                               flex: 1,
                               child: FlagWidget(),
                             ),
-                            const SizedBox(width: 5,),
+                            const SizedBox(
+                              width: 5,
+                            ),
                             Expanded(
                               flex: 4,
                               child: TextFormField(
-                                controller: phoneController,
                                 cursorColor: MyColor.green,
                                 keyboardType: TextInputType.phone,
                                 maxLength: 11,
@@ -58,6 +103,9 @@ class EnterPhonePage extends StatelessWidget {
                                     return "enter phone number";
                                   }
                                   return null;
+                                },
+                                onSaved: (value) {
+                                  phoneNumber = value!;
                                 },
                                 decoration: const InputDecoration(
                                   hintText: ' 000 000 000',
@@ -77,8 +125,13 @@ class EnterPhonePage extends StatelessWidget {
                           height: 20,
                         ),
                         Center(
-                          child:defaultMaterialButton(text: 'send', onPressed: (){})
+                            child: defaultMaterialButton(
+                                text: 'send', onPressed: () {
+                                  showProgressIndicator(context);
+                                  _register(context);
+                            })
                         ),
+                        _buildPhoneNumberSubmitBloc(),
                       ],
                     ),
                   ),
@@ -89,5 +142,28 @@ class EnterPhonePage extends StatelessWidget {
         ],
       ),
     );
+
+
+
+
+  }
+
+  void showProgressIndicator(BuildContext context) {
+    AlertDialog alertDialog = const AlertDialog(
+      backgroundColor: Colors.transparent,
+      elevation: 0,
+      content: Center(
+        child: CircularProgressIndicator(
+          valueColor: AlwaysStoppedAnimation<Color>(Colors.black),
+        ),
+      ),
+    );
+    showDialog(
+        context: context,
+        barrierColor: Colors.white.withOpacity(0),
+        barrierDismissible: false,
+        builder: (context) {
+          return alertDialog;
+        });
   }
 }

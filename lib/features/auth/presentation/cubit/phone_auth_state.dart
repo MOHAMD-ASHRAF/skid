@@ -14,14 +14,14 @@ class LoadingState extends PhoneAuthState{
   List<Object?> get props => [];
 }
 
-class ErrorState extends PhoneAuthState{
-   final String message;
+class PhoneAuthErrorState extends PhoneAuthState{
+   final String messageError;
 
-  const ErrorState({required this.message});
+  const PhoneAuthErrorState({required this.messageError});
 
 
   @override
-  List<Object?> get props => [message];
+  List<Object?> get props => [messageError];
 
 
 }

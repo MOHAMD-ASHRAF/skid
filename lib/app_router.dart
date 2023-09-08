@@ -22,10 +22,11 @@ class AppRouter {
                   child: EnterPhonePage(),
                 ));
       case otpPage:
+        final phoneNumber = settings.arguments;
         return MaterialPageRoute(
             builder: (_) => BlocProvider<PhoneAuthCubit>.value(
                   value: phoneAuthCubit!,
-                  child: const OtpPage(),
+                  child:  OtpPage(phoneNumber: phoneNumber),
                 ));
       case homePage:
         return MaterialPageRoute(builder: (_) => const HomePage());
