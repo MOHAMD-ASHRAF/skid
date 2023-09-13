@@ -18,9 +18,9 @@ class OtpPage extends StatelessWidget {
   final defaultPinTheme = PinTheme(
     width: 56,
     height: 56,
-    textStyle: TextStyle(fontSize: 20, color: Color.fromRGBO(30, 60, 87, 1), fontWeight: FontWeight.w600),
+    textStyle: const TextStyle(fontSize: 20, color: Color.fromRGBO(30, 60, 87, 1), fontWeight: FontWeight.w600),
     decoration: BoxDecoration(
-      border: Border.all(color: Color.fromRGBO(234, 239, 243, 1)),
+      border: Border.all(color: const Color.fromRGBO(234, 239, 243, 1)),
       borderRadius: BorderRadius.circular(20),
     ),
   );
@@ -94,10 +94,18 @@ class OtpPage extends StatelessWidget {
                       const SizedBox(
                         height: 40,
                       ),
-                       Text(
-                        "A OTP SENT TO $phoneNumber ",
-                        style: TextStyle(fontSize: 15, color: Colors.grey),
+                       Row(
+                         children: [
+                          const Text(
+                            "A OTP SENT TO ",
+                            style:  TextStyle(fontSize: 15, color: Colors.grey),
                       ),
+                           Text(
+                             " $phoneNumber ",
+                             style: const TextStyle(fontSize: 15, color:Colors.green),
+                           ),
+                         ],
+                       ),
                       const Text(
                         "kind enter below  the 6 digital code ",
                         style: TextStyle(fontSize: 15, color: Colors.grey),
