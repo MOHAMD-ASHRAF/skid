@@ -54,7 +54,7 @@ class EnterPhonePage extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          const BackGroundWidget(),
+           BackGroundWidget(),
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
@@ -118,7 +118,7 @@ class EnterPhonePage extends StatelessWidget {
                           height: 20,
                         ),
                         Center(
-                            child: defaultMaterialButton(
+                            child: DefaultMaterialButton(
                                 text: 'send', onPressed: () {
                                  showProgressIndicator(context);
                                   _register(context);
@@ -135,10 +135,6 @@ class EnterPhonePage extends StatelessWidget {
         ],
       ),
     );
-
-
-
-
   }
 
   void showProgressIndicator(BuildContext context) {

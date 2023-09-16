@@ -43,6 +43,8 @@ dependencies:
   firebase_analytics:
   firebase_crashlytics:
   pinput: ^3.0.1
+  cached_network_image: ^3.2.3
+  dropdown_button2: ^2.3.9
 
 
 

@@ -132,7 +132,7 @@ class OtpPage extends StatelessWidget {
                       const SizedBox(
                         height: 20,
                       ),
-                      defaultMaterialButton(
+                      DefaultMaterialButton(
                           text: 'verify',
                           onPressed: () {
                             showProgressIndicator(context);

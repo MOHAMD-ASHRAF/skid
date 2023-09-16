@@ -58,7 +58,7 @@ class _HomePageState extends State<HomePage> {
                 children:  [
                   HomeItem(
                     onTap: (){
-                      print('object');
+                      Navigator.pushNamed(context, detailsPage);
                     },
                     image: 'assets/images/pizza0.gif',
                     title: 'food Delivery',
@@ -85,7 +85,7 @@ class _HomePageState extends State<HomePage> {
               BlocProvider<PhoneAuthCubit>(
                 create: (context) => phoneAuthCubit,
                 child: Center(
-                  child: defaultMaterialButton(
+                  child: DefaultMaterialButton(
                     width: 150,
                     text: 'log Out',
                     onPressed: () async {

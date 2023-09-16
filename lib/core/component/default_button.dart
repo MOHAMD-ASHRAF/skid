@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
 
-class defaultMaterialButton extends StatelessWidget {
+class DefaultMaterialButton extends StatelessWidget {
   final Function()? onPressed;
   final String text;
   final double width ;
-   const defaultMaterialButton({Key? key, required this.text, this.onPressed,this.width = double.infinity}) : super(key: key);
+   const DefaultMaterialButton({Key? key, required this.text, this.onPressed,this.width = double.infinity}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Container(
