@@ -6,6 +6,7 @@ import 'package:skid/features/auth/presentation/pages/OTP_page.dart';
 import 'package:skid/features/auth/presentation/pages/enter_phone_page.dart';
 import 'package:skid/features/skid/presentation/pages/contents_packeg_page.dart';
 import 'package:skid/features/skid/presentation/pages/details_page.dart';
+import 'package:skid/features/skid/presentation/pages/example_photo_page.dart';
 import 'package:skid/features/skid/presentation/pages/home_page.dart';
 
 class AppRouter {
@@ -34,9 +35,10 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => const HomePage());
       case detailsPage:
         return MaterialPageRoute(builder: (_) => const DetailsPage());
-
       case contentsPackagePage:
         return MaterialPageRoute(builder: (_) => const ContentsPackagePage());
+      case examplePhotoPage:
+        return MaterialPageRoute(builder: (_) => const ExamplePhotoPage());
     }
     return null;
   }

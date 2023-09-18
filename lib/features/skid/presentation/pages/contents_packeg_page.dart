@@ -3,6 +3,7 @@ import 'package:skid/core/component/default_appbar.dart';
 import 'package:skid/core/component/default_button.dart';
 import 'package:skid/core/component/default_text_form_feild.dart';
 import 'package:skid/core/component/test_widget.dart';
+import 'package:skid/core/constant/string.dart';
 
 class ContentsPackagePage extends StatelessWidget {
   const ContentsPackagePage({Key? key}) : super(key: key);
@@ -40,7 +41,7 @@ class ContentsPackagePage extends StatelessWidget {
                 height: 80,
               ),
               DefaultMaterialButton(text: 'Next', onPressed: (){
-                //Navigator.pushNamed(context, contentsPackagePage);
+                Navigator.pushNamed(context, examplePhotoPage);
               },)
             ],
           ),
