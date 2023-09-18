@@ -4,6 +4,7 @@ import 'package:skid/core/component/default_button.dart';
 import 'package:skid/core/component/test_widget.dart';
 import 'package:skid/core/constant/my_color.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
+import 'package:skid/core/constant/string.dart';
 
 import '../../../../core/component/default_text_form_feild.dart';
 
@@ -142,7 +143,9 @@ class _DetailsPageState extends State<DetailsPage> {
           const SizedBox(
             height: 50,
           ),
-          const DefaultMaterialButton(text: 'Next',)
+           DefaultMaterialButton(text: 'Next', onPressed: (){
+            Navigator.pushNamed(context, contentsPackagePage);
+          },)
         ],
       ),
         ),

@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:skid/core/constant/my_color.dart';
 
+// ignore: must_be_immutable
 class DefaultTextFormFeild extends StatelessWidget {
   final Function()? onPressed;
   TextInputType? keyboardType;
@@ -29,14 +30,15 @@ class DefaultTextFormFeild extends StatelessWidget {
       onSaved: (value) {
         // phoneNumber = value!;
       },
-      decoration: const InputDecoration(
+      decoration:  const InputDecoration(
           enabledBorder: UnderlineInputBorder(
               borderSide:
               BorderSide(color: MyColor.green)),
           focusedBorder: UnderlineInputBorder(
               borderSide:
               BorderSide(color: MyColor.green)),
-          filled: true
+          filled: true,
+        fillColor: MyColor.grey
       ),
     );
   }
