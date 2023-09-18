@@ -88,6 +88,9 @@ class EnterPhonePage extends StatelessWidget {
                             Expanded(
                               flex: 4,
                               child: TextFormField(
+                                onTapOutside: (event){
+                                  FocusManager.instance.primaryFocus?.unfocus();
+                                },
                                 cursorColor: MyColor.green,
                                 keyboardType: TextInputType.phone,
                                 maxLength: 11,

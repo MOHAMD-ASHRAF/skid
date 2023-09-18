@@ -1,7 +1,9 @@
-import 'package:dropdown_button2/dropdown_button2.dart';
+
 import 'package:flutter/material.dart';
 import 'package:skid/core/component/default_appbar.dart';
 import 'package:skid/core/component/test_widget.dart';
+import 'package:skid/core/constant/my_color.dart';
+import 'package:dropdown_button2/dropdown_button2.dart';
 
 class DetailsPage extends StatefulWidget {
   const DetailsPage({Key? key}) : super(key: key);
@@ -22,6 +24,7 @@ class _DetailsPageState extends State<DetailsPage> {
     'more than 6 m',
 
   ];
+
   String? selectedValue;
 
   @override
@@ -54,12 +57,12 @@ class _DetailsPageState extends State<DetailsPage> {
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(14),
                     border: Border.all(
-                      color: Colors.black26,
+                      width: 1.5,
+                      color:  MyColor.green
                     ),
-                    color: Colors.transparent
+                    color: MyColor.grey,
                   ),
                 ),
-
                 isExpanded: true,
                 hint: const Row(
                   children: [
@@ -73,11 +76,11 @@ class _DetailsPageState extends State<DetailsPage> {
                     ),
                     Expanded(
                       child: Text(
-                        'Select Item',
+                        'height in meter',
                         style: TextStyle(
                           fontSize: 14,
                           fontWeight: FontWeight.bold,
-                          color: Colors.black
+                          color: Colors.grey
                         ),
                         overflow: TextOverflow.ellipsis,
                       ),
@@ -102,6 +105,7 @@ class _DetailsPageState extends State<DetailsPage> {
                 onChanged: (String? value) {
                   setState(() {
                     selectedValue = value;
+
                   });
                 }
                 ),
