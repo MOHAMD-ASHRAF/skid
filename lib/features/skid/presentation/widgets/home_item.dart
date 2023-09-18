@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:skid/core/component/test_widget.dart';
 
+// ignore: must_be_immutable
 class HomeItem extends StatelessWidget {
   final String image;
   final String title;

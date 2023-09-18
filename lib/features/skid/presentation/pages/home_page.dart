@@ -81,7 +81,7 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ],
               ),
-              SizedBox(height: 100,),
+              const SizedBox(height: 100,),
               BlocProvider<PhoneAuthCubit>(
                 create: (context) => phoneAuthCubit,
                 child: Center(

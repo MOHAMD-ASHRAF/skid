@@ -4,6 +4,7 @@ import 'package:skid/core/constant/string.dart';
 
 AppBar defaultAppBar(BuildContext context) {
   return AppBar(
+    backgroundColor: Colors.transparent,
     leading: GestureDetector(
       onTap: (){
         Navigator.pop(context);
