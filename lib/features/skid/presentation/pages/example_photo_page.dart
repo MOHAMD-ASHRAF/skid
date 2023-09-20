@@ -25,11 +25,11 @@ class ExamplePhotoPage extends StatelessWidget {
             const SizedBox(
               height: 30,
             ),
-            _exampleImage(context),
+            _exampleImage(context: context, imageUrl: 'assets/images/object.gif', text: 'Example 1'),
             const SizedBox(
               height: 30,
             ),
-            _exampleImage(context),
+            _exampleImage(context: context, imageUrl: 'assets/images/laptop.jpg', text: 'Example 2'),
             const SizedBox(
               height: 20,
             ),
@@ -37,7 +37,7 @@ class ExamplePhotoPage extends StatelessWidget {
             const SizedBox(
               height: 24,
             ),
-            DefaultMaterialButton(text: 'Next', onPressed: (){
+            DefaultMaterialButton(text: 'Tack a Picture', onPressed: (){
              // Navigator.pushNamed(context, examplePhotoPage);
             },)
           ],
@@ -50,22 +50,34 @@ class ExamplePhotoPage extends StatelessWidget {
 
 
 
-  Container _exampleImage(BuildContext context) {
-    return Container(
+  Widget _exampleImage({required BuildContext context , required String imageUrl ,  required String text}) {
+    return Stack(
+      children: [
+        Container(
             width: double.infinity,
             height: 208,
             decoration: BoxDecoration(
-              border: Border.all(color: MyColor.green ,width: 1.2),
-              borderRadius: BorderRadius.circular(20)
+                border: Border.all(color: MyColor.green ,width: 1.2),
+                borderRadius: BorderRadius.circular(20)
             ),
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(20),
-                child: Image.asset('assets/images/backgoround.jpg',
-                  fit: BoxFit.fill,
-                  width: MediaQuery.of(context).size.width,
-                  height: MediaQuery.of(context).size.height,
-                ),
-              )
-          );
+            child: ClipRRect(
+              borderRadius: BorderRadius.circular(20),
+              child: Image.asset(imageUrl,
+                fit: BoxFit.fill,
+                width: MediaQuery.of(context).size.width,
+                height: MediaQuery.of(context).size.height,
+              ),
+            )
+        ),
+        Container(
+          margin: const EdgeInsets.all(10),
+          padding: const EdgeInsets.all(4),
+            decoration: BoxDecoration(
+              color: Colors.white,
+                borderRadius: BorderRadius.circular(8)
+            ),
+            child: TextWidget(text: text, fontSize: 16,fontWeight: FontWeight.bold,)),
+      ],
+    );
   }
 }
