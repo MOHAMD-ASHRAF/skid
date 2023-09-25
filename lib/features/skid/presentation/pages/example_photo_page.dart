@@ -1,55 +1,80 @@
+
+
+
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:skid/core/component/default_appbar.dart';
 import 'package:skid/core/component/default_button.dart';
+
 import 'package:skid/core/component/test_widget.dart';
 import 'package:skid/core/constant/my_color.dart';
 import 'package:skid/core/constant/string.dart';
+
+import 'package:skid/features/skid/cubit/skid_cubit.dart';
 
 class ExamplePhotoPage extends StatelessWidget {
   const ExamplePhotoPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
+    return BlocConsumer<SkidCubit, SkidState>(
+     listener: (context, state) {
+       if(state is ProfileImagePikerLoadingState){
+         showProgressIndicator(context);
+       } else if (state is ProfileImagePikerSuccessState){
+         Navigator.pushNamed(context, takePhotoPage);
+       }else if (state is ProfileImagePikerErrorState){
+         String message = state.messageError;
+         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+           content: Text(message),
+           backgroundColor: Colors.black,
+           duration: const Duration(seconds: 3),
+         ));
+       }
+     },
+      builder: (context, state) {
     return Scaffold(
       appBar: defaultAppBar(context),
-
       body: Padding(
         padding:  const EdgeInsets.all(20),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const TextWidget(text: 'what is in the package ?', fontSize: 26,fontWeight: FontWeight.bold,),
-            const SizedBox(
-              height: 20,
-            ),
-            const TextWidget(text: 'Please note: Take picture of your parcel close to a recognisable object such as a chair ,pen , etc', fontSize: 14),
-            const SizedBox(
-              height: 30,
-            ),
-            _exampleImage(context: context, imageUrl: 'assets/images/object.gif', text: 'Example 1'),
-            const SizedBox(
-              height: 30,
-            ),
-            _exampleImage(context: context, imageUrl: 'assets/images/laptop.jpg', text: 'Example 2'),
-            const SizedBox(
-              height: 20,
-            ),
-            const TextWidget(text: 'If you do not follow this instruction, your order request will not be valid ', fontSize: 14,color: MyColor.green,),
-            const SizedBox(
-              height: 24,
-            ),
-            DefaultMaterialButton(text: 'Tack a Picture', onPressed: (){
-              Navigator.pushNamed(context, takePhotoPage);
-            },)
-          ],
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const TextWidget(text: 'what is in the package ?', fontSize: 26,fontWeight: FontWeight.bold,),
+              const SizedBox(
+                height: 20,
+              ),
+              const TextWidget(text: 'Please note: Take picture of your parcel close to a recognisable object such as a chair ,pen , etc', fontSize: 14),
+              const SizedBox(
+                height: 30,
+              ),
+              _exampleImage(context: context, imageUrl: 'assets/images/object.gif', text: 'Example 1'),
+              const SizedBox(
+                height: 30,
+              ),
+              _exampleImage(context: context, imageUrl: 'assets/images/laptop.jpg', text: 'Example 2'),
+              const SizedBox(
+                height: 20,
+              ),
+              const TextWidget(text: 'If you do not follow this instruction, your order request will not be valid ', fontSize: 14,color: MyColor.green,),
+              const SizedBox(
+                height: 24,
+              ),
+              DefaultMaterialButton(
+                text: 'TAlk A Photo',
+                onPressed: () {
+                  openDialog(context);
+                },
+              )
+            ],
+          ),
         ),
       ),
     );
+  },
+);
   }
-
-
-
-
 
   Widget _exampleImage({required BuildContext context , required String imageUrl ,  required String text}) {
     return Stack(
@@ -68,7 +93,7 @@ class ExamplePhotoPage extends StatelessWidget {
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height,
               ),
-            ) 
+            )
         ),
         Container(
           margin: const EdgeInsets.all(10),
@@ -81,4 +106,58 @@ class ExamplePhotoPage extends StatelessWidget {
       ],
     );
   }
+
+  Widget showProgressIndicator(BuildContext context) => const Center(
+    child: CircularProgressIndicator(
+          color: Colors.green,
+          backgroundColor: Colors.grey,
+        ),
+  );
+
 }
+
+
+
+
+Future openDialog(context) =>showDialog(
+    context: context,
+    builder: (context) =>AlertDialog(
+      title: const Text('chose option'),
+      content: Container(
+        height: 80,
+        child: Column(
+          children: [
+            InkWell(
+              onTap: (){
+                BlocProvider.of<SkidCubit>(context).getProfileImageFromGallery(context);
+                Navigator.pop(context);
+              },
+              child: const Row(
+                children: [
+                  Icon(Icons.image ,color: Colors.green,),
+                  SizedBox(width: 10,),
+                  Text('Gallery'),
+                ],
+              ),
+            ),
+            const SizedBox(height: 20,),
+            InkWell(
+              onTap: (){
+                BlocProvider.of<SkidCubit>(context).getProfileImageFromCamera(context);
+                Navigator.pop(context);
+              },
+              child: const Row(
+                children: [
+                  Icon(Icons.camera_alt ,color: Colors.pink,),
+                  SizedBox(width: 10,),
+                  Text('Camera'),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    )
+);
+
+

@@ -1,9 +1,11 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:skid/app_router.dart';
 import 'package:skid/core/constant/string.dart';
-import 'package:skid/features/auth/presentation/pages/enter_phone_page.dart';
+import 'package:skid/features/skid/cubit/skid_cubit.dart';
+import 'package:skid/features/skid/presentation/pages/example_photo_page.dart';
 
 
 
@@ -38,16 +40,21 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (BuildContext context) => SkidCubit()),
+      ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          useMaterial3: true,
+        ),
+        onGenerateRoute: appRouter.generateRoute,
+        //initialRoute: initialRoute,
+      home: ExamplePhotoPage(),
       ),
-      onGenerateRoute: appRouter.generateRoute,
-      initialRoute: initialRoute,
-    //  home: EnterPhonePage(),
     );
   }
 }
