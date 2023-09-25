@@ -3,6 +3,7 @@ import 'package:skid/core/component/default_appbar.dart';
 import 'package:skid/core/component/default_button.dart';
 import 'package:skid/core/component/test_widget.dart';
 import 'package:skid/core/constant/my_color.dart';
+import 'package:skid/core/constant/string.dart';
 
 class ExamplePhotoPage extends StatelessWidget {
   const ExamplePhotoPage({Key? key}) : super(key: key);
@@ -38,7 +39,7 @@ class ExamplePhotoPage extends StatelessWidget {
               height: 24,
             ),
             DefaultMaterialButton(text: 'Tack a Picture', onPressed: (){
-             // Navigator.pushNamed(context, examplePhotoPage);
+              Navigator.pushNamed(context, takePhotoPage);
             },)
           ],
         ),
@@ -67,7 +68,7 @@ class ExamplePhotoPage extends StatelessWidget {
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height,
               ),
-            )
+            ) 
         ),
         Container(
           margin: const EdgeInsets.all(10),
