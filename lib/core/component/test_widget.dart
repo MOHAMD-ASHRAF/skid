@@ -5,6 +5,7 @@ class TextWidget extends StatelessWidget {
   final double fontSize;
   final FontWeight? fontWeight;
   final Color? color ;
+
   const TextWidget({
     super.key, required this.text, required this.fontSize, this.fontWeight, this.color,
   });
