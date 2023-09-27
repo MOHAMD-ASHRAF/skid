@@ -8,14 +8,14 @@ import 'package:skid/core/constant/string.dart';
 
 import '../../../../core/component/default_text_form_feild.dart';
 
-class DetailsPage extends StatefulWidget {
-  const DetailsPage({Key? key}) : super(key: key);
+class PackageDetailsPage extends StatefulWidget {
+  const PackageDetailsPage({Key? key}) : super(key: key);
 
   @override
-  State<DetailsPage> createState() => _DetailsPageState();
+  State<PackageDetailsPage> createState() => _PackageDetailsPageState();
 }
 
-class _DetailsPageState extends State<DetailsPage> {
+class _PackageDetailsPageState extends State<PackageDetailsPage> {
   final List<String> itemsHeightAndWidth = [
     'less than 1 m',
     '1 m',

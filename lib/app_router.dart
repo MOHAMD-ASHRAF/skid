@@ -4,8 +4,9 @@ import 'package:skid/core/constant/string.dart';
 import 'package:skid/features/auth/presentation/cubit/phone_auth_cubit.dart';
 import 'package:skid/features/auth/presentation/pages/OTP_page.dart';
 import 'package:skid/features/auth/presentation/pages/enter_phone_page.dart';
+import 'package:skid/features/skid/presentation/pages/address_details_page.dart';
 import 'package:skid/features/skid/presentation/pages/contents_packeg_page.dart';
-import 'package:skid/features/skid/presentation/pages/details_page.dart';
+import 'package:skid/features/skid/presentation/pages/package_details_page.dart';
 import 'package:skid/features/skid/presentation/pages/example_photo_page.dart';
 import 'package:skid/features/skid/presentation/pages/home_page.dart';
 import 'package:skid/features/skid/presentation/pages/take_photo_page.dart';
@@ -34,14 +35,17 @@ class AppRouter {
                 ));
       case homePage:
         return MaterialPageRoute(builder: (_) => const HomePage());
-      case detailsPage:
-        return MaterialPageRoute(builder: (_) => const DetailsPage());
+      case packageDetailsPage:
+        return MaterialPageRoute(builder: (_) => const PackageDetailsPage());
       case contentsPackagePage:
         return MaterialPageRoute(builder: (_) => const ContentsPackagePage());
       case examplePhotoPage:
         return MaterialPageRoute(builder: (_) => const ExamplePhotoPage());
       case takePhotoPage:
         return MaterialPageRoute(builder: (_) => const TakePhotoPage());
+      case addressDetailsPage:
+        return MaterialPageRoute(builder: (_) => const AddressDetailsPage());
+
     }
     return null;
   }

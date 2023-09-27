@@ -5,6 +5,7 @@ import 'package:skid/core/component/default_appbar.dart';
 import 'package:skid/core/component/default_button.dart';
 
 import 'package:skid/core/constant/my_color.dart';
+import 'package:skid/core/constant/string.dart';
 import 'package:skid/features/skid/cubit/skid_cubit.dart';
 
 class TakePhotoPage extends StatelessWidget {
@@ -35,9 +36,9 @@ class TakePhotoPage extends StatelessWidget {
                 height: 200,
               ),
               DefaultMaterialButton(
-                text: 'Next',
+                text: 'Submit',
                 onPressed: () {
-
+                  Navigator.pushNamed(context, addressDetailsPage);
                 },
               )
             ],

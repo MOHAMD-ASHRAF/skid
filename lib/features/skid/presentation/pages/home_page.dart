@@ -58,7 +58,7 @@ class _HomePageState extends State<HomePage> {
                 children:  [
                   HomeItem(
                     onTap: (){
-                      Navigator.pushNamed(context, detailsPage);
+                      Navigator.pushNamed(context, packageDetailsPage);
                     },
                     image: 'assets/images/pizza0.gif',
                     title: 'food Delivery',
