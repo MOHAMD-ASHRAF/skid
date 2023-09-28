@@ -38,7 +38,7 @@ class OtpPage extends StatelessWidget {
           Navigator.pop(context);
           Navigator.pushReplacementNamed(
             context,
-            homePage,
+            loginPage,
           );
         } else if (state is PhoneAuthErrorState) {
           String message = state.messageError;

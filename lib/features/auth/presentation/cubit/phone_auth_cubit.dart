@@ -1,4 +1,5 @@
 import 'package:bloc/bloc.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:equatable/equatable.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
@@ -6,7 +7,7 @@ part 'phone_auth_state.dart';
 
 class PhoneAuthCubit extends Cubit<PhoneAuthState> {
   late String verificationId;
-
+  CollectionReference users = FirebaseFirestore.instance.collection('users');
   PhoneAuthCubit() : super(PhoneAuthInitial());
 
   Future<void> submitPhoneNumber(String phoneNumber) async {
@@ -65,4 +66,27 @@ class PhoneAuthCubit extends Cubit<PhoneAuthState> {
     User firebaseUser = FirebaseAuth.instance.currentUser!;
     return firebaseUser;
   }
+
+
+
+
+  Future<void> addUser({required String name, required String email}) async{
+    emit(LoginLoadingState());
+
+    return await users
+        .add({
+      'name': name,
+      'email': email,
+    })
+        .then((value) {
+      emit(LoginSuccessState());
+      print("User Added");
+
+    })
+        .catchError((error){
+      emit(LoginErrorState(messageError: error));
+      print("Failed to add user: $error");
+    });
+  }
+
 }

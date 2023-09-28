@@ -34,7 +34,31 @@ class PhoneNumberSubmitedState extends PhoneAuthState{
 
 class PhoneOTPVerifiedState extends PhoneAuthState{
   @override
-  // TODO: implement props
+
   List<Object?> get props => [];
+
+}
+
+
+
+class LoginLoadingState extends  PhoneAuthState{
+  @override
+  List<Object?> get props => [];
+}
+
+class LoginSuccessState extends  PhoneAuthState{
+  @override
+  List<Object?> get props => [];
+}
+
+
+class LoginErrorState extends  PhoneAuthState{
+  final String messageError;
+
+  const LoginErrorState({required this.messageError});
+
+  @override
+  List<Object?> get props => [messageError];
+
 
 }

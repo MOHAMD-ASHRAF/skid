@@ -4,6 +4,7 @@ import 'package:skid/core/constant/string.dart';
 import 'package:skid/features/auth/presentation/cubit/phone_auth_cubit.dart';
 import 'package:skid/features/auth/presentation/pages/OTP_page.dart';
 import 'package:skid/features/auth/presentation/pages/enter_phone_page.dart';
+import 'package:skid/features/auth/presentation/pages/login_page.dart';
 import 'package:skid/features/skid/presentation/pages/address_details_page.dart';
 import 'package:skid/features/skid/presentation/pages/contents_packeg_page.dart';
 import 'package:skid/features/skid/presentation/pages/package_details_page.dart';
@@ -33,6 +34,8 @@ class AppRouter {
                   value: phoneAuthCubit!,
                   child: OtpPage(phoneNumber: phoneNumber),
                 ));
+      case loginPage:
+        return MaterialPageRoute(builder: (_) =>  LoginPage());
       case homePage:
         return MaterialPageRoute(builder: (_) => const HomePage());
       case packageDetailsPage:

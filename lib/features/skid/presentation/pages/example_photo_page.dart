@@ -123,7 +123,7 @@ Future openDialog(context) =>showDialog(
     context: context,
     builder: (context) =>AlertDialog(
       title: const Text('chose option'),
-      content: Container(
+      content: SizedBox(
         height: 80,
         child: Column(
           children: [

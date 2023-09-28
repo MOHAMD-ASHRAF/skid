@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class OTPTextFeildWidget extends StatelessWidget {
-    OTPTextFeildWidget({Key? key, required this.controller}) : super(key: key);
+    const OTPTextFeildWidget({Key? key, required this.controller}) : super(key: key);
    final TextEditingController controller;
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class OTPTextFeildWidget extends StatelessWidget {
           }
         },
         textAlign: TextAlign.center,
-        style: TextStyle(fontSize: 22),
+        style: const TextStyle(fontSize: 22),
         keyboardType: TextInputType.phone,
         cursorColor: Colors.green,
         inputFormatters: [

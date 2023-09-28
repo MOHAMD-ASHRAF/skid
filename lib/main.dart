@@ -4,8 +4,11 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:skid/app_router.dart';
 import 'package:skid/core/constant/string.dart';
+import 'package:skid/features/auth/presentation/cubit/phone_auth_cubit.dart';
+
+
 import 'package:skid/features/skid/cubit/skid_cubit.dart';
-import 'package:skid/features/skid/presentation/pages/example_photo_page.dart';
+
 
 
 
@@ -43,6 +46,7 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (BuildContext context) => SkidCubit()),
+        BlocProvider(create: (BuildContext context) => PhoneAuthCubit()),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -52,8 +56,8 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
         ),
         onGenerateRoute: appRouter.generateRoute,
-        //initialRoute: initialRoute,
-      home: ExamplePhotoPage(),
+        initialRoute: initialRoute,
+       //home: LoginPage(),
       ),
     );
   }

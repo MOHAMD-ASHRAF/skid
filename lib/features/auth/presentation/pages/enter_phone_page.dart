@@ -54,7 +54,7 @@ class EnterPhonePage extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-           BackGroundWidget(),
+           const BackGroundWidget(),
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
