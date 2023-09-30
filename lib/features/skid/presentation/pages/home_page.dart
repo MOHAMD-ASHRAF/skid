@@ -30,7 +30,7 @@ class _HomePageState extends State<HomePage> {
                 fontSize: 22,
               ),
               const TextWidget(
-                text: 'Mohamed',
+                text: 'Mohamed Ashraf',
                 fontSize: 38,
                 color: Colors.grey,
                 fontWeight: FontWeight.bold,

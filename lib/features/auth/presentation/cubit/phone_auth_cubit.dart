@@ -8,6 +8,8 @@ part 'phone_auth_state.dart';
 class PhoneAuthCubit extends Cubit<PhoneAuthState> {
   late String verificationId;
   CollectionReference users = FirebaseFirestore.instance.collection('users');
+
+
   PhoneAuthCubit() : super(PhoneAuthInitial());
 
   Future<void> submitPhoneNumber(String phoneNumber) async {
