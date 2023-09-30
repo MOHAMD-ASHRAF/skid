@@ -7,3 +7,4 @@ const examplePhotoPage  = '/examplePhotoPage';
 const takePhotoPage  = '/takePhotoPage';
 const addressDetailsPage  = '/addressDetailsPage';
 const loginPage  = '/loginPage';
+const setDatePage  = '/setDatePage';

@@ -10,6 +10,7 @@ import 'package:skid/features/skid/presentation/pages/contents_packeg_page.dart'
 import 'package:skid/features/skid/presentation/pages/package_details_page.dart';
 import 'package:skid/features/skid/presentation/pages/example_photo_page.dart';
 import 'package:skid/features/skid/presentation/pages/home_page.dart';
+import 'package:skid/features/skid/presentation/pages/set_date_page.dart';
 import 'package:skid/features/skid/presentation/pages/take_photo_page.dart';
 
 class AppRouter {
@@ -48,6 +49,8 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => const TakePhotoPage());
       case addressDetailsPage:
         return MaterialPageRoute(builder: (_) => const AddressDetailsPage());
+      case setDatePage:
+        return MaterialPageRoute(builder: (_) => const SetDatePage());
 
     }
     return null;

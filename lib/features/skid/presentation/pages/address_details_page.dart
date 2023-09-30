@@ -4,6 +4,7 @@ import 'package:skid/core/component/default_appbar.dart';
 import 'package:skid/core/component/default_button.dart';
 import 'package:skid/core/component/default_text_form_feild.dart';
 import 'package:skid/core/component/test_widget.dart';
+import 'package:skid/core/constant/string.dart';
 
 
 class AddressDetailsPage extends StatelessWidget {
@@ -21,7 +22,7 @@ class AddressDetailsPage extends StatelessWidget {
                 const BodyItem(),
                 const SizedBox(height: 40,),
                 DefaultMaterialButton(text: 'Next', onPressed: (){
-                //  Navigator.pushNamed(context, examplePhotoPage);
+                  Navigator.pushNamed(context, setDatePage);
                 },)
               ],
             ),
