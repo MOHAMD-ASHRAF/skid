@@ -1,13 +1,91 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:skid/core/component/default_appbar.dart';
+import 'package:skid/core/component/default_button.dart';
+import 'package:skid/core/component/test_widget.dart';
 
-class SetDatePage extends StatelessWidget {
+class SetDatePage extends StatefulWidget {
   const SetDatePage({super.key});
+
+  @override
+  State<SetDatePage> createState() => _SetDatePageState();
+}
+
+class _SetDatePageState extends State<SetDatePage> {
+  late DateTime dateTime;
+
+  @override
+  void initState() {
+    dateTime = DateTime.now();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: defaultAppBar(context),
+      body: SizedBox(
+        width: double.infinity,
+        child: Padding(
+          padding: const EdgeInsets.all(20),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              showDateAndTime(),
+              DefaultMaterialButton(
+                onPressed: () {
+
+                },
+                text: 'next',
+              ),
+            ],
+          ),
+        ),
+      ),
     );
+  }
+
+  Column showDateAndTime() {
+    return Column(
+            children: [
+              TextWidget(fontSize: 25, text: 'Date: ${dateTime.day.toString()}-${dateTime.month.toString()}-${dateTime.year.toString()}'),
+              TextWidget(fontSize: 25, text: 'Time: ${dateTime.hour.toString()}:${dateTime.minute.toString()}'),
+              TextButton(onPressed: (){_showDataPicker(context);}, child: TextWidget(fontSize: 18, text: 'change date',))
+            ],
+          );
+  }
+
+
+
+
+  Future<dynamic> _showDataPicker(BuildContext context) {
+    return showCupertinoModalPopup(
+        context: context,
+        builder: (context) => Container(
+              height: MediaQuery.of(context).size.height * 0.4,
+              color: Colors.white,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.end,
+                children: [
+                  TextButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      child: Text('done')),
+                  Expanded(
+                    child: CupertinoDatePicker(
+                      backgroundColor: Colors.white,
+                      initialDateTime: dateTime,
+                      onDateTimeChanged: (DateTime newTime) {
+                        setState(() {
+                          dateTime = newTime;
+                        });
+                      },
+                    ),
+                  ),
+                ],
+              ),
+            ));
   }
 }

@@ -3,11 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:skid/app_router.dart';
+import 'package:skid/core/constant/my_color.dart';
 import 'package:skid/core/constant/string.dart';
 import 'package:skid/features/auth/presentation/cubit/phone_auth_cubit.dart';
 
 
 import 'package:skid/features/skid/cubit/skid_cubit.dart';
+import 'package:skid/features/skid/presentation/pages/set_date_page.dart';
 
 
 
@@ -52,12 +54,12 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: 'Flutter Demo',
         theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+          colorScheme: ColorScheme.fromSeed(seedColor: MyColor.green),
           useMaterial3: true,
         ),
         onGenerateRoute: appRouter.generateRoute,
-        initialRoute: initialRoute,
-       //home: LoginPage(),
+        //initialRoute: initialRoute,
+       home: SetDatePage(),
       ),
     );
   }
