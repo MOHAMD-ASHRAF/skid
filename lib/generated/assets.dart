@@ -4,6 +4,7 @@ class Assets {
 
   static const String animationSend = 'assets/animation/send.json';
   static const String imagesBackgoround = 'assets/images/backgoround.jpg';
+  static const String imagesBicycle = 'assets/images/bicycle.jpg';
   static const String imagesBox = 'assets/images/box.gif';
   static const String imagesLaptop = 'assets/images/laptop.jpg';
   static const String imagesLocation = 'assets/images/location.png';
