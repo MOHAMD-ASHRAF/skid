@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:skid/core/component/default_appbar.dart';
 import 'package:skid/core/component/default_button.dart';
 import 'package:skid/core/component/test_widget.dart';
+import 'package:skid/core/constant/string.dart';
 
 class SetDatePage extends StatefulWidget {
   const SetDatePage({super.key});
@@ -35,7 +36,7 @@ class _SetDatePageState extends State<SetDatePage> {
               showDateAndTime(),
               DefaultMaterialButton(
                 onPressed: () {
-
+                   Navigator.pushNamed(context, vehicleTypePage);
                 },
                 text: 'next',
               ),
@@ -51,7 +52,7 @@ class _SetDatePageState extends State<SetDatePage> {
             children: [
               TextWidget(fontSize: 25, text: 'Date: ${dateTime.day.toString()}-${dateTime.month.toString()}-${dateTime.year.toString()}'),
               TextWidget(fontSize: 25, text: 'Time: ${dateTime.hour.toString()}:${dateTime.minute.toString()}'),
-              TextButton(onPressed: (){_showDataPicker(context);}, child: TextWidget(fontSize: 18, text: 'change date',))
+              TextButton(onPressed: (){_showDataPicker(context);}, child: const TextWidget(fontSize: 18, text: 'change date',))
             ],
           );
   }
@@ -72,7 +73,7 @@ class _SetDatePageState extends State<SetDatePage> {
                       onPressed: () {
                         Navigator.pop(context);
                       },
-                      child: Text('done')),
+                      child: const Text('done')),
                   Expanded(
                     child: CupertinoDatePicker(
                       backgroundColor: Colors.white,

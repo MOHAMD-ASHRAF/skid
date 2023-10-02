@@ -12,6 +12,7 @@ import 'package:skid/features/skid/presentation/pages/example_photo_page.dart';
 import 'package:skid/features/skid/presentation/pages/home_page.dart';
 import 'package:skid/features/skid/presentation/pages/set_date_page.dart';
 import 'package:skid/features/skid/presentation/pages/take_photo_page.dart';
+import 'package:skid/features/skid/presentation/pages/vehicle_type.dart';
 
 class AppRouter {
   PhoneAuthCubit? phoneAuthCubit;
@@ -51,6 +52,8 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => const AddressDetailsPage());
       case setDatePage:
         return MaterialPageRoute(builder: (_) => const SetDatePage());
+      case vehicleTypePage:
+        return MaterialPageRoute(builder: (_) => const VehicleTypePage());
 
     }
     return null;
