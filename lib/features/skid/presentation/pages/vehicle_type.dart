@@ -14,13 +14,13 @@ class VehicleTypePage extends StatefulWidget {
 class _VehicleTypePageState extends State<VehicleTypePage> {
   List<DeliveryItemModel> item = [
     DeliveryItemModel('assets/images/bicycle.jpg', 'Bicycle Delivery',
-        '16.00\$', '60 mins to delivery', false),
-    DeliveryItemModel('assets/images/bicycle.jpg', 'Bicycle Delivery',
-        '16.00\$', '60 mins to delivery', false),
-    DeliveryItemModel('assets/images/bicycle.jpg', 'Bicycle Delivery',
-        '16.00\$', '60 mins to delivery', false),
-    DeliveryItemModel('assets/images/bicycle.jpg', 'Bicycle Delivery',
-        '16.00\$', '60 mins to delivery', false),
+        '16.00\$', '60 min to delivery', false),
+    DeliveryItemModel('assets/images/motorbike.jpg', 'Motorbike Delivery',
+        '20.00\$', '60 min to delivery', false),
+    DeliveryItemModel('assets/images/car_delivery.jpg', 'car Delivery',
+        '34.00\$', '60 min to delivery', false),
+    DeliveryItemModel('assets/images/van.jpg', 'van Delivery',
+        '60.00\$', '60 min to delivery', false),
   ];
  // bool selected = false;
 
@@ -99,7 +99,7 @@ class _VehicleTypePageState extends State<VehicleTypePage> {
               child: Image.asset(
                 image,
                 fit: BoxFit.fill,
-                width: 120,
+                width: 110,
                 height: MediaQuery.of(context).size.height,
               ),
             ),
