@@ -10,3 +10,4 @@ const loginPage  = '/loginPage';
 const setDatePage  = '/setDatePage';
 const vehicleTypePage  = '/vehicleTypePage';
 const payPalPage  = '/payPalPage';
+const mapPage  = '/mapPage';

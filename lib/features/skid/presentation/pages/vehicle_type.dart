@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:skid/core/component/default_appbar.dart';
+import 'package:skid/core/component/default_button.dart';
 import 'package:skid/core/component/test_widget.dart';
 import 'package:skid/core/constant/my_color.dart';
+import 'package:skid/core/constant/string.dart';
 import 'package:skid/features/skid/presentation/widgets/delivery_item_model.dart';
 
 class VehicleTypePage extends StatefulWidget {
@@ -53,8 +55,16 @@ class _VehicleTypePageState extends State<VehicleTypePage> {
                        index,
                        item[index].isSelected);
                 },
-                itemCount:item.length, separatorBuilder: (BuildContext context, int index) {return  SizedBox(height: 32,); },)
-
+                itemCount:item.length, separatorBuilder: (BuildContext context, int index) {return  SizedBox(height: 32,); },),
+            const SizedBox(
+              height: 32,
+            ),
+            DefaultMaterialButton(
+              text: 'done',
+              onPressed: () {
+                Navigator.pushNamed(context, mapPage);
+              },
+            )
           ],
         ),
       ),

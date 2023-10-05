@@ -46,6 +46,7 @@ dependencies:
   image_picker: ^1.0.4
   dropdown_button2: ^2.3.9
   lottie: ^2.6.0
+  google_maps_flutter: ^2.5.0
 
 
 
