@@ -62,7 +62,7 @@ class _VehicleTypePageState extends State<VehicleTypePage> {
             DefaultMaterialButton(
               text: 'done',
               onPressed: () {
-                Navigator.pushNamed(context, mapPage);
+                Navigator.pushNamed(context, choseDriverPage);
               },
             )
           ],

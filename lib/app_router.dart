@@ -58,8 +58,8 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => const VehicleTypePage());
       case payPalPage:
         return MaterialPageRoute(builder: (_) => const PayPalPage());
-        case mapPage:
-      return MaterialPageRoute(builder: (_) => const MapPage());
+        case choseDriverPage:
+      return MaterialPageRoute(builder: (_) => const ChoseDriverPage());
 
     }
     return null;

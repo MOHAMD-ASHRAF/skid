@@ -60,7 +60,7 @@ class MyApp extends StatelessWidget {
         ),
         onGenerateRoute: appRouter.generateRoute,
         //initialRoute: initialRoute,
-       home: MapPage(),
+       home: ChoseDriverPage(),
       ),
     );
   }
