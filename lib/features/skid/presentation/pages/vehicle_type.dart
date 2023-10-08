@@ -24,7 +24,6 @@ class _VehicleTypePageState extends State<VehicleTypePage> {
     DeliveryItemModel('assets/images/van.jpg', 'van Delivery',
         '60.00\$', '60 min to delivery', false),
   ];
- // bool selected = false;
 
   @override
   Widget build(BuildContext context) {

@@ -5,8 +5,13 @@ import 'package:skid/core/constant/my_color.dart';
 
 class ChoseDriverItem extends StatelessWidget {
   const ChoseDriverItem({
-    super.key,
+    super.key, required this.image, required this.name, required this.time, required this.rate, required this.phone,
   });
+  final String image;
+  final String name;
+  final String time;
+  final String rate;
+  final String phone;
 
   @override
   Widget build(BuildContext context) {
@@ -26,25 +31,25 @@ class ChoseDriverItem extends StatelessWidget {
                     topLeft: Radius.circular(9),
                     topRight: Radius.circular(9)),
                 color: Colors.black),
-            child: const Center(
+            child:  Center(
               child: ListTile(
                 leading: CircleAvatar(
                   radius: 30,
                   backgroundColor: MyColor.green,
                   child: CircleAvatar(
                     radius: 26,
-                    backgroundImage: AssetImage('assets/images/person.jpg'),
+                    backgroundImage: AssetImage(image),
                   ),
                 ),
                 title: TextWidget(
-                  text: 'mohamed Ashraf',
+                  text: name,
                   fontSize: 16,
                   color: Colors.white,
                 ),
                 subtitle: Row(
                   children: [
                     TextWidget(
-                      text: '4.8',
+                      text: rate,
                       fontSize: 12,
                       color: Colors.white,
                     ),
@@ -56,7 +61,7 @@ class ChoseDriverItem extends StatelessWidget {
                   ],
                 ),
                 trailing: TextWidget(
-                  text: '5 mins away',
+                  text: '$time mins away',
                   fontSize: 12,
                   color: Colors.white,
                 ),

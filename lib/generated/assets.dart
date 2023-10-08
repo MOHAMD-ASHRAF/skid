@@ -12,6 +12,9 @@ class Assets {
   static const String imagesMotorbike = 'assets/images/motorbike.jpg';
   static const String imagesObject = 'assets/images/object.gif';
   static const String imagesPerson = 'assets/images/person.jpg';
+  static const String imagesPerson1 = 'assets/images/person1.jpg';
+  static const String imagesPerson2 = 'assets/images/person2.jpg';
+  static const String imagesPerson3 = 'assets/images/person3.jpg';
   static const String imagesPhoneIcon = 'assets/images/phoneIcon.png';
   static const String imagesPizza0 = 'assets/images/pizza0.gif';
   static const String imagesSend = 'assets/images/send.png';
