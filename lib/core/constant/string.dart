@@ -11,3 +11,4 @@ const setDatePage  = '/setDatePage';
 const vehicleTypePage  = '/vehicleTypePage';
 const payPalPage  = '/payPalPage';
 const choseDriverPage  = '/choseDriverPage';
+const trackProgressPage  = '/trackProgressPage';

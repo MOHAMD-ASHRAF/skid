@@ -14,6 +14,7 @@ import 'package:skid/features/skid/presentation/pages/home_page.dart';
 import 'package:skid/features/skid/presentation/pages/payment_page.dart';
 import 'package:skid/features/skid/presentation/pages/set_date_page.dart';
 import 'package:skid/features/skid/presentation/pages/take_photo_page.dart';
+import 'package:skid/features/skid/presentation/pages/track_progress_page.dart';
 import 'package:skid/features/skid/presentation/pages/vehicle_type.dart';
 
 class AppRouter {
@@ -60,6 +61,8 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => const PayPalPage());
         case choseDriverPage:
       return MaterialPageRoute(builder: (_) => const ChoseDriverPage());
+      case trackProgressPage:
+        return MaterialPageRoute(builder: (_) => const TrackProgressPage());
 
     }
     return null;

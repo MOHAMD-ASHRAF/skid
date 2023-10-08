@@ -1,5 +1,7 @@
 
 import 'package:flutter/material.dart';
+import 'package:skid/core/component/default_appbar.dart';
+import 'package:skid/core/component/test_widget.dart';
 import 'package:skid/core/constant/my_color.dart';
 
 import 'package:skid/features/skid/presentation/widgets/chose_driver_Item.dart';
@@ -24,39 +26,44 @@ class _ChoseDriverPageState extends State<ChoseDriverPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: SafeArea(
-      child: Padding(
-        padding:  const EdgeInsets.all(20),
-        child: Column(
-          children: [
-            Container(
-              width: 220,
-              height: 53,
-              decoration:  BoxDecoration(
-                  borderRadius: BorderRadius.circular(28),
-                  color: Colors.grey.shade300),
-              child: Center(child: RichText(text: const TextSpan(
-                children: [
-                 TextSpan(text: '4 bike ',style: TextStyle(color: MyColor.green,fontSize: 18)),
-                  TextSpan(text: 'close to you',style: TextStyle(color:Colors.black,fontSize: 18))
-                ]
-              ),
-
-              )),
-            ),
-            const SizedBox(height: 16,),
-            Expanded(
-              child: ListView.separated(
-                itemBuilder: (context, index) =>  ChoseDriverItem(image: item[index].image, name: item[index].name, time: item[index].time, rate: item[index].rate, phone: item[index].phone,),
-                separatorBuilder: (BuildContext context, int index) => const SizedBox(
-                  height: 32,
+        appBar: defaultAppBar(context),
+        body: Padding(
+          padding:  const EdgeInsets.symmetric(horizontal: 20),
+          child: Column(
+            children: [
+              buildContainer(),
+              const TextWidget(text: 'chose one', fontSize: 18,color: MyColor.green,),
+              const SizedBox(height: 16,),
+              Expanded(
+                child: ListView.separated(
+                   physics: const BouncingScrollPhysics(),
+                  itemBuilder: (context, index) =>  ChoseDriverItem(image: item[index].image, name: item[index].name, time: item[index].time, rate: item[index].rate, phone: item[index].phone,),
+                  separatorBuilder: (BuildContext context, int index) => const SizedBox(
+                    height: 32,
+                  ),
+                  itemCount: item.length,
                 ),
-                itemCount: item.length,
               ),
+            ],
+          ),
+        ));
+  }
+
+  Container buildContainer() {
+    return Container(
+            width: 220,
+            height: 53,
+            decoration:  BoxDecoration(
+                borderRadius: BorderRadius.circular(28),
+                color: Colors.grey.shade300),
+            child: Center(child: RichText(text: const TextSpan(
+              children: [
+               TextSpan(text: '4 bike ',style: TextStyle(color: MyColor.green,fontSize: 18)),
+                TextSpan(text: 'close to you',style: TextStyle(color:Colors.black,fontSize: 18))
+              ]
             ),
-          ],
-        ),
-      ),
-    ));
+
+            )),
+          );
   }
 }
