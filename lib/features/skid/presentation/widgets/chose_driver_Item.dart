@@ -71,7 +71,7 @@ class ChoseDriverItem extends StatelessWidget {
             subtitle: const TextWidget(
               text: 'Finding a Rider for you...',
               fontSize: 16,
-              color: Colors.green,
+              color: MyColor.darkGreen,
               fontWeight: FontWeight.bold,
             ),
             trailing: Image.asset(
@@ -83,8 +83,8 @@ class ChoseDriverItem extends StatelessWidget {
           ListTile(
             title: const TextWidget(
               text: 'Cancel',
-              fontSize: 16,
-              color: MyColor.green,
+              fontSize: 15,
+              color: MyColor.darkGreen,
             ),
             trailing: Container(
               decoration: BoxDecoration(
