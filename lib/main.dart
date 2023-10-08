@@ -9,7 +9,7 @@ import 'package:skid/features/auth/presentation/cubit/phone_auth_cubit.dart';
 
 
 import 'package:skid/features/skid/cubit/skid_cubit.dart';
-import 'package:skid/features/skid/presentation/pages/map_page.dart';
+import 'package:skid/features/skid/presentation/pages/chose_driver_Page.dart';
 
 
 

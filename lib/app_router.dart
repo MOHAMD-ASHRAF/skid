@@ -7,7 +7,7 @@ import 'package:skid/features/auth/presentation/pages/enter_phone_page.dart';
 import 'package:skid/features/auth/presentation/pages/login_page.dart';
 import 'package:skid/features/skid/presentation/pages/address_details_page.dart';
 import 'package:skid/features/skid/presentation/pages/contents_packeg_page.dart';
-import 'package:skid/features/skid/presentation/pages/map_page.dart';
+import 'package:skid/features/skid/presentation/pages/chose_driver_Page.dart';
 import 'package:skid/features/skid/presentation/pages/package_details_page.dart';
 import 'package:skid/features/skid/presentation/pages/example_photo_page.dart';
 import 'package:skid/features/skid/presentation/pages/home_page.dart';
