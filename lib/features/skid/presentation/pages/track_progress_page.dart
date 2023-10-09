@@ -196,7 +196,7 @@ class TrackProgressPage extends StatelessWidget {
                 fontSize: 12,
                 color: Colors.white,
               ),
-              Icon(
+              const Icon(
                 Icons.star,
                 color: Colors.yellow,
                 size: 18,
