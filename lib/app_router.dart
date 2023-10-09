@@ -16,6 +16,7 @@ import 'package:skid/features/skid/presentation/pages/set_date_page.dart';
 import 'package:skid/features/skid/presentation/pages/take_photo_page.dart';
 import 'package:skid/features/skid/presentation/pages/track_progress_page.dart';
 import 'package:skid/features/skid/presentation/pages/vehicle_type.dart';
+import 'package:skid/features/skid/presentation/widgets/person_delivery_item_model.dart';
 
 class AppRouter {
   PhoneAuthCubit? phoneAuthCubit;
@@ -62,7 +63,8 @@ class AppRouter {
         case choseDriverPage:
       return MaterialPageRoute(builder: (_) => const ChoseDriverPage());
       case trackProgressPage:
-        return MaterialPageRoute(builder: (_) => const TrackProgressPage());
+        final PersonDeliveryItemModel personDeliveryItemModel = settings.arguments as PersonDeliveryItemModel;
+        return MaterialPageRoute(builder: (context) =>   TrackProgressPage(item: personDeliveryItemModel));
 
     }
     return null;

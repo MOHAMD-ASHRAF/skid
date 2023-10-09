@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:skid/core/component/default_appbar.dart';
 import 'package:skid/core/constant/my_color.dart';
+import 'package:skid/features/skid/presentation/widgets/person_delivery_item_model.dart';
 import '../../../../core/component/test_widget.dart';
 
 class TrackProgressPage extends StatelessWidget {
-  const TrackProgressPage({super.key});
-
+  const TrackProgressPage({super.key, required this.item});
+   final PersonDeliveryItemModel item;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -173,25 +174,25 @@ class TrackProgressPage extends StatelessWidget {
           borderRadius: BorderRadius.only(
               topLeft: Radius.circular(32), topRight: Radius.circular(32)),
           color: Colors.black),
-      child: const Center(
+      child:  Center(
         child: ListTile(
-          leading: CircleAvatar(
+          leading:  CircleAvatar(
             radius: 30,
             backgroundColor: MyColor.green,
             child: CircleAvatar(
               radius: 26,
-              backgroundImage: AssetImage('assets/images/person.jpg'),
+              backgroundImage: AssetImage(item.image),
             ),
           ),
           title: TextWidget(
-            text: 'mohamed ashraf',
+            text: item.name,
             fontSize: 16,
             color: Colors.white,
           ),
-          subtitle: Row(
+          subtitle:  Row(
             children: [
               TextWidget(
-                text: '5.0',
+                text: item.rate,
                 fontSize: 12,
                 color: Colors.white,
               ),
@@ -203,8 +204,8 @@ class TrackProgressPage extends StatelessWidget {
             ],
           ),
 
-          trailing: TextWidget(
-            text: '5 Mins away',
+          trailing:  TextWidget(
+            text: "${item.time} Mins away",
             fontSize: 12,
             color: Colors.white,
           ),
