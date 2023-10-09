@@ -2,6 +2,8 @@
 import 'package:flutter/material.dart';
 import 'package:skid/core/component/test_widget.dart';
 import 'package:skid/core/constant/my_color.dart';
+import 'package:flutter_phone_direct_caller/flutter_phone_direct_caller.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ChoseDriverItem extends StatelessWidget {
   const ChoseDriverItem({
@@ -13,6 +15,18 @@ class ChoseDriverItem extends StatelessWidget {
   final String rate;
   final String phone;
   final void Function() onTap;
+
+
+  Future<void> _makePhoneCall(String phoneNumber) async {
+    final Uri launchUri = Uri(
+      scheme: 'tel',
+      path: phoneNumber,
+    );
+    await launchUrl(launchUri);
+  }
+
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -80,10 +94,15 @@ class ChoseDriverItem extends StatelessWidget {
               color: MyColor.darkGreen,
               fontWeight: FontWeight.bold,
             ),
-            trailing: Image.asset(
-              'assets/images/phoneIcon.png',
-              width: 46,
-              height: 46,
+            trailing: GestureDetector(
+             onTap: () {
+               _makePhoneCall('01022953656');
+             },
+              child: Image.asset(
+                'assets/images/phoneIcon.png',
+                width: 46,
+                height: 46,
+              ),
             ),
           ),
           ListTile(

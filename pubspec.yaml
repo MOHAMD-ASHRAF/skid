@@ -47,6 +47,8 @@ dependencies:
   dropdown_button2: ^2.3.9
   lottie: ^2.6.0
   google_maps_flutter: ^2.5.0
+  flutter_phone_direct_caller: ^2.1.1
+  url_launcher: ^6.1.14
 
 
 

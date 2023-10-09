@@ -57,7 +57,7 @@ class MyApp extends StatelessWidget {
         ),
         onGenerateRoute: appRouter.generateRoute,
         //initialRoute: initialRoute,
-       home: ChoseDriverPage(),
+       home: const ChoseDriverPage(),
       ),
     );
   }
