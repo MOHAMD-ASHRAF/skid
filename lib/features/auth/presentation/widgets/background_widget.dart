@@ -9,7 +9,7 @@ class BackGroundWidget extends StatelessWidget {
     return SizedBox(
       width: double.infinity,
       height: double.infinity,
-      child: Image.asset('assets/images/backgoround.jpg',
+      child: Image.asset('assets/images/background0.png',
         fit: BoxFit.cover,
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,

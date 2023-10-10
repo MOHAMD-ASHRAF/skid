@@ -146,7 +146,7 @@ class EnterPhonePage extends StatelessWidget {
       elevation: 0,
       content: Center(
         child: CircularProgressIndicator(
-          valueColor: AlwaysStoppedAnimation<Color>(Colors.black),
+          valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
         ),
       ),
     );

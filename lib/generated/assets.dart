@@ -3,12 +3,13 @@ class Assets {
   Assets._();
 
   static const String animationSend = 'assets/animation/send.json';
-  static const String imagesBackgoround = 'assets/images/backgoround.jpg';
+  static const String imagesBackground0 = 'assets/images/background0.png';
   static const String imagesBicycle = 'assets/images/bicycle.jpg';
   static const String imagesBox = 'assets/images/box.gif';
   static const String imagesCarDelivery = 'assets/images/car_delivery.jpg';
   static const String imagesLaptop = 'assets/images/laptop.jpg';
   static const String imagesLocation = 'assets/images/location.png';
+  static const String imagesLogo = 'assets/images/logo.png';
   static const String imagesMotorbike = 'assets/images/motorbike.jpg';
   static const String imagesObject = 'assets/images/object.gif';
   static const String imagesPackageInDoor = 'assets/images/package_in_door.webp';

@@ -5,6 +5,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:skid/app_router.dart';
 import 'package:skid/core/constant/my_color.dart';
 import 'package:skid/core/constant/string.dart';
+import 'package:skid/core/splash_screen.dart';
 import 'package:skid/features/auth/presentation/cubit/phone_auth_cubit.dart';
 
 
@@ -56,8 +57,8 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
         ),
         onGenerateRoute: appRouter.generateRoute,
-        //initialRoute: initialRoute,
-       home: const ChoseDriverPage(),
+        initialRoute: initialRoute,
+       //home: const SplashScreen(),
       ),
     );
   }
