@@ -9,6 +9,8 @@ import 'package:skid/features/auth/presentation/cubit/phone_auth_cubit.dart';
 
 
 import 'package:skid/features/skid/cubit/skid_cubit.dart';
+import 'package:skid/features/skid/presentation/pages/chose_driver_Page.dart';
+
 
 late String initialRoute;
 
@@ -54,8 +56,8 @@ class MyApp extends StatelessWidget {
           useMaterial3: true,
         ),
         onGenerateRoute: appRouter.generateRoute,
-        initialRoute: initialRoute,
-      // home: const ChoseDriverPage(),
+        //initialRoute: initialRoute,
+       home: const ChoseDriverPage(),
       ),
     );
   }
