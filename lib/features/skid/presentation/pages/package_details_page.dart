@@ -84,7 +84,7 @@ class _PackageDetailsPageState extends State<PackageDetailsPage> {
             height: 30,
           ),
           const Center(
-              child: TextWidget(text: 'Height of Package', fontSize: 18)),
+              child: TextWidget(text: 'Width of Package', fontSize: 18)),
           const SizedBox(
             height: 10,
           ),
@@ -107,7 +107,7 @@ class _PackageDetailsPageState extends State<PackageDetailsPage> {
             height: 30,
           ),
           const Center(
-              child: TextWidget(text: 'Height of Package', fontSize: 18)),
+              child: TextWidget(text: 'Weight of Package', fontSize: 18)),
           const SizedBox(
             height: 10,
           ),
@@ -188,7 +188,7 @@ class _PackageDetailsPageState extends State<PackageDetailsPage> {
     return ButtonStyleData(
       height: 50,
       width: double.infinity,
-      padding: const EdgeInsets.only(left: 14, right: 14),
+      padding:  EdgeInsets.only(left: 14, right: 14),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(14),
         border: Border.all(width: 1, color: MyColor.green),

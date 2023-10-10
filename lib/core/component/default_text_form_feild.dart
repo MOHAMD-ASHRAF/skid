@@ -10,13 +10,16 @@ class DefaultTextFormFeild extends StatelessWidget {
    final TextEditingController? controller;
   TextInputType? keyboardType;
   final int maxLine ;
+  final int maxLength ;
    DefaultTextFormFeild({
-    super.key, this.onPressed,  this.maxLine = 1,this.keyboardType, this.validator, this.controller
+    super.key, this.onPressed,  this.maxLine = 1,this.keyboardType, this.validator, this.controller,  this.maxLength = 100
   });
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
+
+      maxLength: maxLength,
       controller: controller,
       maxLines: maxLine,
       onTapOutside: (event){

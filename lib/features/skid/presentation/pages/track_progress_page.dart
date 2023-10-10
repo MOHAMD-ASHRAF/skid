@@ -222,7 +222,7 @@ class TrackProgressPage extends StatelessWidget {
                 fontSize: 12,
                 color: Colors.white,
               ),
-              SizedBox(height: 8,),
+              const SizedBox(height: 8,),
               GestureDetector(
                 onTap: () {
                   _makePhoneCall('01022953656');
