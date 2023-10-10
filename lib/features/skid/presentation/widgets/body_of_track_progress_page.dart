@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:quickalert/quickalert.dart';
 import 'package:skid/core/component/test_widget.dart';
 import 'package:skid/core/constant/my_color.dart';
+import 'package:skid/core/constant/string.dart';
 
 class BodyOfTrackProgressPage extends StatelessWidget {
   const BodyOfTrackProgressPage({
@@ -82,7 +84,19 @@ class BodyOfTrackProgressPage extends StatelessWidget {
                         ),
                         const SizedBox(width: 16,),
                         GestureDetector(
-                          onTap: (){},
+                          onTap: (){
+                            QuickAlert.show(
+                              confirmBtnColor: MyColor.darkGreen,
+                              confirmBtnText: 'order',
+                              onConfirmBtnTap: (){
+                                Navigator.pushReplacementNamed(context, homePage);
+                              },
+                              title: 'That great',
+                              context: context,
+                              type: QuickAlertType.confirm,
+                              text: 'Are you need send  something else!',
+                            );
+                          },
                           child: Container(
                             decoration: BoxDecoration(
                               color: Colors.white,
