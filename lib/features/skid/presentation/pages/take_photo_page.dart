@@ -31,9 +31,15 @@ class TakePhotoPage extends StatelessWidget {
                       border: Border.all(color: MyColor.green, width: 1.2),
                       borderRadius: BorderRadius.circular(20)),
               ),
+              const SizedBox(
+                height: 16,
+              ),
+              TextButton(onPressed: (){
+                Navigator.pushReplacementNamed(context, examplePhotoPage);
+              }, child: const Text('talk another photo',style: TextStyle(fontSize: 16),)),
 
               const SizedBox(
-                height: 200,
+                height: 100,
               ),
               DefaultMaterialButton(
                 text: 'Submit',

@@ -25,23 +25,30 @@ class _SetDatePageState extends State<SetDatePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: defaultAppBar(context),
-      body: SizedBox(
-        width: double.infinity,
-        child: Padding(
-          padding: const EdgeInsets.all(20),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-            children: [
-              showDateAndTime(),
-              DefaultMaterialButton(
-                onPressed: () {
-                   Navigator.pushNamed(context, vehicleTypePage);
-                },
-                text: 'next',
+      body: Padding(
+        padding: const EdgeInsets.all(20),
+        child: Column(
+          children: [
+            const TextWidget(text: 'Set the date and time to send the package', fontSize: 26,fontWeight: FontWeight.bold,),
+            SizedBox(height: 200,),
+            SizedBox(
+              width: double.infinity,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  showDateAndTime(),
+                  SizedBox(height: 32,),
+                  DefaultMaterialButton(
+                    onPressed: () {
+                       Navigator.pushNamed(context, vehicleTypePage);
+                    },
+                    text: 'next',
+                  ),
+                ],
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

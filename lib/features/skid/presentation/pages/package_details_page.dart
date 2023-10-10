@@ -30,12 +30,12 @@ class _PackageDetailsPageState extends State<PackageDetailsPage> {
   final List<String> itemWeight = [
     'less than 1 m',
     '1 kg',
-    '2 kj',
-    '3 kj',
-    '4 kj',
-    '5 kj',
-    '6 kj',
-    'more than 6 kj',
+    '2 kg',
+    '3 kg',
+    '4 kg',
+    '5 kg',
+    '6 kg',
+    'more than 6 kg',
   ];
 
   String? selectedHeightValue;

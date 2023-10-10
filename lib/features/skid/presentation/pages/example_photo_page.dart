@@ -41,7 +41,7 @@ class ExamplePhotoPage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const TextWidget(text: 'what is in the package ?', fontSize: 26,fontWeight: FontWeight.bold,),
+              const TextWidget(text: 'Take a picture of the item', fontSize: 26,fontWeight: FontWeight.bold,),
               const SizedBox(
                 height: 20,
               ),
@@ -57,7 +57,7 @@ class ExamplePhotoPage extends StatelessWidget {
               const SizedBox(
                 height: 20,
               ),
-              const TextWidget(text: 'If you do not follow this instruction, your order request will not be valid ', fontSize: 14,color: MyColor.green,),
+              const TextWidget(text: 'If you do not follow this instruction, your order request will not be valid ', fontSize: 14,color: MyColor.green,fontWeight: FontWeight.bold,),
               const SizedBox(
                 height: 24,
               ),

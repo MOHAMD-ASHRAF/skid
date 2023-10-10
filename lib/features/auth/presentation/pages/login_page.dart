@@ -1,13 +1,13 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:lottie/lottie.dart';
+
 import 'package:skid/core/component/default_button.dart';
 import 'package:skid/core/component/default_text_form_feild.dart';
 import 'package:skid/core/component/test_widget.dart';
 import 'package:skid/core/constant/string.dart';
 import 'package:skid/features/auth/presentation/cubit/phone_auth_cubit.dart';
-import 'package:skid/features/auth/presentation/cubit/phone_auth_cubit.dart';
+
 
 class LoginPage extends StatelessWidget {
   LoginPage({Key? key,}) : super(key: key);
@@ -50,9 +50,10 @@ class LoginPage extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      Lottie.asset(
-                          'assets/animation/send.json', width: 100,
-                          height: 100),
+                    Image.asset('assets/images/CircleHalfTilt.png',
+                    fit: BoxFit.cover,
+                    width: 100,
+                    height:100,),
                       const TextWidget(text: 'Welcome to', fontSize: 18),
                       const TextWidget(
                         text: 'Skid',
@@ -63,6 +64,7 @@ class LoginPage extends StatelessWidget {
                       const SizedBox(height: 16,),
                       DefaultTextFormFeild(
                           controller: nameController,
+                          maxLength: 30,
 
                           validator: (value) {
                             if (value!.isEmpty) {
@@ -75,6 +77,7 @@ class LoginPage extends StatelessWidget {
                           text: 'Email Address (Optional)', fontSize: 18),
                       const SizedBox(height: 16,),
                       DefaultTextFormFeild(
+                        maxLength: 30,
                         controller: emailController,
                       ),
                       const SizedBox(height: 66,),
