@@ -13,7 +13,7 @@ Used Firebase Auth to authenticate users(OTP).
 &nbsp;&nbsp;&nbsp;&nbsp;
 <img src="https://github.com/MOHAMD-ASHRAF/BMI/assets/84055555/341db43e-1f22-49fe-a7b6-fa7856f8b839" width= 180>
   &nbsp;&nbsp;&nbsp;&nbsp;
-<img src="(https://github.com/MOHAMD-ASHRAF/movies_app/assets/84055555/5456b4e3-70ed-4b0c-9264-6e64a610cc79" width= 180>
+<img src="https://github.com/MOHAMD-ASHRAF/BMI/assets/84055555/330fa48f-ba63-4308-a6ed-f68e72ef754f" width= 180>
 &nbsp;&nbsp;&nbsp;&nbsp;
 <img src="https://github.com/MOHAMD-ASHRAF/movies_app/assets/84055555/7f077cff-3b96-4655-a01c-75ac6bbb0596" width= 180>
   &nbsp;&nbsp;&nbsp;&nbsp;
