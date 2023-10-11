@@ -5,21 +5,15 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:skid/app_router.dart';
 import 'package:skid/core/constant/my_color.dart';
 import 'package:skid/core/constant/string.dart';
-import 'package:skid/core/splash_screen.dart';
 import 'package:skid/features/auth/presentation/cubit/phone_auth_cubit.dart';
-
-
 import 'package:skid/features/skid/cubit/skid_cubit.dart';
-import 'package:skid/features/skid/presentation/pages/chose_driver_Page.dart';
+
 
 
 late String initialRoute;
-
-
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
-
   FirebaseAuth.instance.authStateChanges().listen((user) {
     if (user == null) {
       initialRoute = enterPhonePage;
@@ -27,19 +21,13 @@ void main() async {
       initialRoute = homePage;
     }
   });
-
-
   runApp(MyApp(
     appRouter: AppRouter(),
   ));
-
-
-
 }
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key, required this.appRouter});
-
   final AppRouter appRouter;
 
   @override

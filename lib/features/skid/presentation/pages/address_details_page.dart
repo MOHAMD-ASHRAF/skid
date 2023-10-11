@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-
 import 'package:skid/core/component/default_appbar.dart';
 import 'package:skid/core/component/default_button.dart';
 import 'package:skid/core/component/default_text_form_feild.dart';

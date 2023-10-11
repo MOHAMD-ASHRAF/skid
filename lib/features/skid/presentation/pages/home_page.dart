@@ -8,7 +8,6 @@ import 'package:skid/features/skid/presentation/widgets/home_item.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
-
   @override
   State<HomePage> createState() => _HomePageState();
 }

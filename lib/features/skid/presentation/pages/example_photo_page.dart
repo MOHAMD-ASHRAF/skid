@@ -1,15 +1,10 @@
-
-
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:skid/core/component/default_appbar.dart';
 import 'package:skid/core/component/default_button.dart';
-
 import 'package:skid/core/component/test_widget.dart';
 import 'package:skid/core/constant/my_color.dart';
 import 'package:skid/core/constant/string.dart';
-
 import 'package:skid/features/skid/cubit/skid_cubit.dart';
 
 class ExamplePhotoPage extends StatelessWidget {
@@ -112,12 +107,7 @@ class ExamplePhotoPage extends StatelessWidget {
           color: Colors.green,
           backgroundColor: Colors.grey,
         ),
-  );
-
-}
-
-
-
+  );}
 
 Future openDialog(context) =>showDialog(
     context: context,

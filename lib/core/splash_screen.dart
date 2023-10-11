@@ -24,7 +24,7 @@ class _SplashScreenState extends State<SplashScreen> {
               stops: [0.0, 1.0],
               tileMode: TileMode.clamp),
         ),
-        child: Center(
+        child: const Center(
           child: Text('hegoo'),
         ),
       ),

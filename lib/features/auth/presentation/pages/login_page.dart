@@ -1,7 +1,5 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
 import 'package:skid/core/component/default_button.dart';
 import 'package:skid/core/component/default_text_form_feild.dart';
 import 'package:skid/core/component/test_widget.dart';
@@ -9,6 +7,7 @@ import 'package:skid/core/constant/string.dart';
 import 'package:skid/features/auth/presentation/cubit/phone_auth_cubit.dart';
 
 
+// ignore: must_be_immutable
 class LoginPage extends StatelessWidget {
   LoginPage({Key? key,}) : super(key: key);
 

@@ -71,7 +71,6 @@ class TrackProgressPage extends StatelessWidget {
               )
             ],
           ),
-
           trailing:  Column(
             children: [
               TextWidget(

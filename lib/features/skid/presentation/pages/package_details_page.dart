@@ -188,7 +188,7 @@ class _PackageDetailsPageState extends State<PackageDetailsPage> {
     return ButtonStyleData(
       height: 50,
       width: double.infinity,
-      padding:  EdgeInsets.only(left: 14, right: 14),
+      padding:  const EdgeInsets.only(left: 14, right: 14),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(14),
         border: Border.all(width: 1, color: MyColor.green),

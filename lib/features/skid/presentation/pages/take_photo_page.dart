@@ -37,7 +37,6 @@ class TakePhotoPage extends StatelessWidget {
               TextButton(onPressed: (){
                 Navigator.pushReplacementNamed(context, examplePhotoPage);
               }, child: const Text('talk another photo',style: TextStyle(fontSize: 16),)),
-
               const SizedBox(
                 height: 100,
               ),

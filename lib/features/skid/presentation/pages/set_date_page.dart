@@ -30,7 +30,7 @@ class _SetDatePageState extends State<SetDatePage> {
         child: Column(
           children: [
             const TextWidget(text: 'Set the date and time to send the package', fontSize: 26,fontWeight: FontWeight.bold,),
-            SizedBox(height: 200,),
+            const SizedBox(height: 200,),
             SizedBox(
               width: double.infinity,
               child: Column(
@@ -38,7 +38,7 @@ class _SetDatePageState extends State<SetDatePage> {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   showDateAndTime(),
-                  SizedBox(height: 32,),
+                  const SizedBox(height: 32,),
                   DefaultMaterialButton(
                     onPressed: () {
                        Navigator.pushNamed(context, vehicleTypePage);
