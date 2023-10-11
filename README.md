@@ -25,6 +25,14 @@ Talk some information about package and photo for it.
 <img src="https://github.com/MOHAMD-ASHRAF/movies_app/assets/84055555/789b4468-959b-4052-94c3-0732b6d4c482" width= 180>
 &nbsp;&nbsp;&nbsp;&nbsp;
 <img src="https://github.com/MOHAMD-ASHRAF/movies_app/assets/84055555/ffb1b06e-9c11-4f11-ada5-e1fd2cd2ad16" width= 180>
-&nbsp;&nbsp;&nbsp;&nbsp;  
+&nbsp;&nbsp;&nbsp;&nbsp; 
+<img src="https://github.com/MOHAMD-ASHRAF/BMI/assets/84055555/b145e11d-e416-4c28-9f9c-611331d078fd" width= 180>
+&nbsp;&nbsp;&nbsp;&nbsp; 
+<img src="https://github.com/MOHAMD-ASHRAF/BMI/assets/84055555/ccbf0adf-f703-4e11-8db7-7bb774a49d05" width= 180>
+&nbsp;&nbsp;&nbsp;&nbsp; 
+<img src="https://github.com/MOHAMD-ASHRAF/BMI/assets/84055555/32f1148f-d76e-44d5-b078-efc11b593daa" width= 180>
+&nbsp;&nbsp;&nbsp;&nbsp; 
+<img src="https://github.com/MOHAMD-ASHRAF/BMI/assets/84055555/851f4951-2164-4ae9-91aa-49e19051e749" width= 180>
+&nbsp;&nbsp;&nbsp;&nbsp; 
 
 </div>
