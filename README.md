@@ -13,10 +13,9 @@ Used Firebase Auth to authenticate users(OTP).
 &nbsp;&nbsp;&nbsp;&nbsp;
 <img src="https://github.com/MOHAMD-ASHRAF/movies_app/assets/84055555/009b8aff-9c92-4414-a4ee-a8545f60764a" width= 180>
   &nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="(https://github.com/MOHAMD-ASHRAF/movies_app/assets/84055555/5456b4e3-70ed-4b0c-9264-6e64a610cc79" width= 180>
-  &nbsp;&nbsp;&nbsp;&nbsp;
-  &nbsp;&nbsp;&nbsp;&nbsp;
-  <img src="https://github.com/MOHAMD-ASHRAF/movies_app/assets/84055555/7f077cff-3b96-4655-a01c-75ac6bbb0596" width= 180>
+<img src="(https://github.com/MOHAMD-ASHRAF/movies_app/assets/84055555/5456b4e3-70ed-4b0c-9264-6e64a610cc79" width= 180>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="https://github.com/MOHAMD-ASHRAF/movies_app/assets/84055555/7f077cff-3b96-4655-a01c-75ac6bbb0596" width= 180>
   &nbsp;&nbsp;&nbsp;&nbsp;
 </div>
 
