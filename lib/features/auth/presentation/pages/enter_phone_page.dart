@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:skid/core/component/default_button.dart';
 import 'package:skid/core/constant/my_color.dart';
 import 'package:skid/core/constant/string.dart';
@@ -9,6 +10,7 @@ import 'package:skid/features/auth/presentation/cubit/phone_auth_cubit.dart';
 import 'package:skid/features/auth/presentation/widgets/background_widget.dart';
 import 'package:skid/features/auth/presentation/widgets/build_intro_text.dart';
 import 'package:skid/features/auth/presentation/widgets/flag_widget.dart';
+
 
 class EnterPhonePage extends StatelessWidget {
   EnterPhonePage({Key? key}) : super(key: key);
@@ -64,7 +66,7 @@ class EnterPhonePage extends StatelessWidget {
                     topRight: Radius.circular(32),
                     topLeft: Radius.circular(32)),
               ),
-              height: 280,
+              height: 230.h,
               width: double.infinity,
               child: Padding(
                 padding: const EdgeInsets.all(20),
@@ -117,8 +119,8 @@ class EnterPhonePage extends StatelessWidget {
                             ),
                           ],
                         ),
-                        const SizedBox(
-                          height: 20,
+                         SizedBox(
+                          height: MediaQuery.of(context).size.height / 40,
                         ),
                         Center(
                             child: DefaultMaterialButton(

@@ -7,7 +7,7 @@ import 'package:skid/core/constant/my_color.dart';
 import 'package:skid/core/constant/string.dart';
 import 'package:skid/features/auth/presentation/cubit/phone_auth_cubit.dart';
 import 'package:skid/features/skid/cubit/skid_cubit.dart';
-
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 
 late String initialRoute;
@@ -37,16 +37,21 @@ class MyApp extends StatelessWidget {
         BlocProvider(create: (BuildContext context) => SkidCubit()),
         BlocProvider(create: (BuildContext context) => PhoneAuthCubit()),
       ],
-      child: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Flutter Demo',
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: MyColor.green),
-          useMaterial3: true,
+      child: ScreenUtilInit(
+        designSize: const Size(360, 690),
+        minTextAdapt: true,
+        splitScreenMode: true,
+        child: MaterialApp(
+          debugShowCheckedModeBanner: false,
+          title: 'Flutter Demo',
+          theme: ThemeData(
+            colorScheme: ColorScheme.fromSeed(seedColor: MyColor.green),
+            useMaterial3: true,
+          ),
+          onGenerateRoute: appRouter.generateRoute,
+          initialRoute: initialRoute,
+         //home: const SplashScreen(),
         ),
-        onGenerateRoute: appRouter.generateRoute,
-        initialRoute: initialRoute,
-       //home: const SplashScreen(),
       ),
     );
   }

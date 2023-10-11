@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:pinput/pinput.dart';
 import 'package:skid/core/component/default_button.dart';
 import 'package:skid/core/constant/string.dart';
@@ -9,6 +10,7 @@ import 'package:skid/features/auth/presentation/widgets/background_widget.dart';
 
 
 class OtpPage extends StatelessWidget {
+  // ignore: prefer_typing_uninitialized_variables
   final phoneNumber;
   OtpPage({
     Key? key,
@@ -64,11 +66,11 @@ class OtpPage extends StatelessWidget {
     return Scaffold(
       body: Stack(
         children: [
-          BackGroundWidget(),
+          const BackGroundWidget(),
           Align(
             alignment: Alignment.bottomCenter,
             child: Container(
-              height: 350,
+              height: 245.h,
               width: double.infinity,
               color: Colors.white,
               child: Form(
