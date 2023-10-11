@@ -48,3 +48,15 @@ Talk information about address.
 <img src="https://github.com/MOHAMD-ASHRAF/BMI/assets/84055555/3bf7364c-8389-42bb-98d8-78e48be7dabc" width= 180>
 &nbsp;&nbsp;&nbsp;&nbsp;
 </div>
+
+#### Progress 
+<div>
+<img src="https://github.com/MOHAMD-ASHRAF/BMI/assets/84055555/b1f43286-6b1a-47cf-8aac-2c3f520eeef8" width= 180>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="https://github.com/MOHAMD-ASHRAF/BMI/assets/84055555/e8e26cf5-4e18-4b0c-ac36-e921fe40b050" width= 180>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="https://github.com/MOHAMD-ASHRAF/BMI/assets/84055555/78f4923b-e37f-4431-903c-c849b0e9c953" width= 180>
+&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="https://github.com/MOHAMD-ASHRAF/BMI/assets/84055555/71c11ca3-30b9-4f05-955d-8c5634512529" width= 180>
+&nbsp;&nbsp;&nbsp;&nbsp;
+</div>
