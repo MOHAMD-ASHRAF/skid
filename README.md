@@ -34,7 +34,8 @@ Talk some information about package and photo for it.
 &nbsp;&nbsp;&nbsp;&nbsp; 
 <img src="https://github.com/MOHAMD-ASHRAF/BMI/assets/84055555/851f4951-2164-4ae9-91aa-49e19051e749" width= 160>
 &nbsp;&nbsp;&nbsp;&nbsp; 
-
+<div>
+  
 #### Address 
 Talk information about address.
 <div>
@@ -46,7 +47,4 @@ Talk information about address.
 &nbsp;&nbsp;&nbsp;&nbsp;
 <img src="https://github.com/MOHAMD-ASHRAF/BMI/assets/84055555/3bf7364c-8389-42bb-98d8-78e48be7dabc" width= 180>
 &nbsp;&nbsp;&nbsp;&nbsp;
-
-
-
 </div>
