@@ -1,12 +1,11 @@
 #  photo from project
 
-#### About 
+### About 
 Skid app that deliver anything, anywhere. It is perfect for small stores and businesses that need to deliver goods
 to their customers, as well as individuals who need to send packages or gifts.
 
-### Ahuth 
-Skid app that deliver anything, anywhere. It is perfect for small stores and businesses that need to deliver goods
-to their customers, as well as individuals who need to send packages or gifts.
+#### Ahuth 
+Used Firebase Auth to authenticate users(OTP).
 <div>
 <img src="https://github.com/MOHAMD-ASHRAF/movies_app/assets/84055555/43cc21f1-60c5-4205-9856-277090d93980" width= 180>
 &nbsp;&nbsp;&nbsp;&nbsp;
