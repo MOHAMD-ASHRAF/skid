@@ -23,10 +23,10 @@ Used Firebase Auth to authenticate users(OTP).
 #### Home 
 Talk some information about package and photo for it.
 <div>
-<img src="https://github.com/MOHAMD-ASHRAF/movies_app/assets/84055555/ffb1b06e-9c11-4f11-ada5-e1fd2cd2ad16" width= 180>
-&nbsp;&nbsp;&nbsp;&nbsp;  
 <img src="https://github.com/MOHAMD-ASHRAF/movies_app/assets/84055555/789b4468-959b-4052-94c3-0732b6d4c482" width= 180>
 &nbsp;&nbsp;&nbsp;&nbsp;
+  <img src="https://github.com/MOHAMD-ASHRAF/movies_app/assets/84055555/ffb1b06e-9c11-4f11-ada5-e1fd2cd2ad16" width= 180>
+&nbsp;&nbsp;&nbsp;&nbsp;  
 <img src="https://github.com/MOHAMD-ASHRAF/movies_app/assets/84055555/b9496479-df10-4397-a44f-1205a1ace39e" width= 180>
   &nbsp;&nbsp;&nbsp;&nbsp;
 <img src="https://github.com/MOHAMD-ASHRAF/movies_app/assets/84055555/8a0abadf-9e71-429f-8e01-4210048219f3" width= 180>
