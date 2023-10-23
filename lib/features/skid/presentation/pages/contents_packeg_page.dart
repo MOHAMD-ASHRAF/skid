@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:skid/core/component/default_appbar.dart';
 import 'package:skid/core/component/default_button.dart';
 import 'package:skid/core/component/default_text_form_feild.dart';
@@ -18,7 +19,7 @@ class ContentsPackagePage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const TextWidget(text: 'what is in the package ?', fontSize: 26,fontWeight: FontWeight.bold,),
+               TextWidget(text: 'what is in the package ?', fontSize: 20.sp,fontWeight: FontWeight.bold,),
                const SizedBox(
                 height: 20,
               ),
@@ -37,8 +38,8 @@ class ContentsPackagePage extends StatelessWidget {
                 height: 10,
               ),
               DefaultTextFormFeild(maxLine: 12,),
-              const SizedBox(
-                height: 80,
+               SizedBox(
+                height: 40.h,
               ),
               DefaultMaterialButton(text: 'Next', onPressed: (){
                 Navigator.pushNamed(context, examplePhotoPage);

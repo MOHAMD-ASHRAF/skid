@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:skid/core/component/default_appbar.dart';
 import 'package:skid/core/component/default_button.dart';
 import 'package:skid/core/component/test_widget.dart';
@@ -52,16 +53,16 @@ class _PackageDetailsPageState extends State<PackageDetailsPage> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const TextWidget(
+           TextWidget(
             text: 'Provide more details about your parcel',
-            fontSize: 26,
+            fontSize: 20.sp,
             fontWeight: FontWeight.bold,
           ),
-          const SizedBox(
-            height: 20,
+           SizedBox(
+            height: 18.h,
           ),
-          const Center(
-              child: TextWidget(text: 'Height of Package', fontSize: 18)),
+           Center(
+              child: TextWidget(text: 'Height of Package', fontSize: 18.sp)),
           const SizedBox(
             height: 10,
           ),
@@ -80,13 +81,13 @@ class _PackageDetailsPageState extends State<PackageDetailsPage> {
                   selectedHeightValue = value;
                 });
               }),
-          const SizedBox(
-            height: 30,
+           SizedBox(
+            height: 24.h,
           ),
-          const Center(
-              child: TextWidget(text: 'Width of Package', fontSize: 18)),
-          const SizedBox(
-            height: 10,
+           Center(
+              child: TextWidget(text: 'Width of Package', fontSize: 18.sp)),
+           SizedBox(
+            height: 10.h,
           ),
           DropdownButton2(
               isExpanded: true,
@@ -103,13 +104,13 @@ class _PackageDetailsPageState extends State<PackageDetailsPage> {
                   selectedWidthValue = value;
                 });
               }),
-          const SizedBox(
-            height: 30,
+           SizedBox(
+            height: 24.h,
           ),
-          const Center(
-              child: TextWidget(text: 'Weight of Package', fontSize: 18)),
-          const SizedBox(
-            height: 10,
+           Center(
+              child: TextWidget(text: 'Weight of Package', fontSize: 18.sp)),
+           SizedBox(
+            height: 8.h,
           ),
           DropdownButton2(
               isExpanded: true,
@@ -126,8 +127,8 @@ class _PackageDetailsPageState extends State<PackageDetailsPage> {
                   selectedWeightValue = value;
                 });
               }),
-          const SizedBox(
-            height: 30,
+           SizedBox(
+            height: 24.h,
           ),
           const TextWidget(text: 'Quantity', fontSize: 18),
           DefaultTextFormFeild(
@@ -140,8 +141,8 @@ class _PackageDetailsPageState extends State<PackageDetailsPage> {
               text:
                   'Note This: the driver will have a package hand to verify the weight of your package, if here is difference  in the weight of package , it may affect the delivery cost',
               fontSize: 14),
-          const SizedBox(
-            height: 50,
+           SizedBox(
+            height: 10.h,
           ),
            DefaultMaterialButton(text: 'Next', onPressed: (){
             Navigator.pushNamed(context, contentsPackagePage);
@@ -174,8 +175,8 @@ class _PackageDetailsPageState extends State<PackageDetailsPage> {
           Expanded(
             child: Text(
               text,
-              style: const TextStyle(
-                  fontSize: 14,
+              style: TextStyle(
+                  fontSize: 14.sp,
                   fontWeight: FontWeight.bold,
                   color: Colors.grey),
               overflow: TextOverflow.ellipsis,

@@ -81,13 +81,13 @@ class _HomePageState extends State<HomePage> {
                       subTitle: 'less than 10kg',
                     ),
                   ],
-                ),
-                const SizedBox(height: 100,),
+                ), 
+                 SizedBox(height: 80.h,),
                 BlocProvider<PhoneAuthCubit>(
                   create: (context) => phoneAuthCubit,
                   child: Center(
                     child: DefaultMaterialButton(
-                      width: 150,
+                      width: 150.w,
                       text: 'log Out',
                       onPressed: () async {
                         await phoneAuthCubit.logOut();

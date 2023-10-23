@@ -11,14 +11,13 @@ class SkidCubit extends Cubit<SkidState> {
   SkidCubit() : super(SkidInitial());
 
   File? profileImage;
-  var picker =ImagePicker();
+  var picker =  ImagePicker();
 
 
   Future<void> getProfileImageFromGallery(BuildContext context) async{
     emit(ProfileImagePikerLoadingState());
     final pikedFile = await picker.pickImage(source: ImageSource.gallery);
     if (pikedFile != null){
-      //Navigator.of(context).pop();
       profileImage =File(pikedFile.path);
       emit(ProfileImagePikerSuccessState());
     }else
@@ -33,7 +32,6 @@ class SkidCubit extends Cubit<SkidState> {
     final pikedFile = await picker.pickImage(source: ImageSource.camera);
     if (pikedFile != null){
       profileImage =File(pikedFile.path);
-      //Navigator.of(context).pop();
       emit(ProfileImagePikerSuccessState());
     }else
     {

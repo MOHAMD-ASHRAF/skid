@@ -31,40 +31,42 @@ class _VehicleTypePageState extends State<VehicleTypePage> {
       appBar: defaultAppBar(context),
       body: Padding(
         padding: const EdgeInsets.all(20),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const TextWidget(
-              text: 'select a Vehicle Type',
-              fontSize: 32,
-            ),
-            const SizedBox(
-              height: 32,
-            ),
-            ListView.separated(
-                scrollDirection: Axis.vertical,
-                shrinkWrap: true,
-                itemBuilder: (context, int index) {
-                  return buildContainerItem(
-                       context,
-                       item[index].image,
-                       item[index].name,
-                       item[index].price,
-                       item[index].time,
-                       index,
-                       item[index].isSelected);
+        child: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const TextWidget(
+                text: 'select a Vehicle Type',
+                fontSize: 32,
+              ),
+              const SizedBox(
+                height: 32,
+              ),
+              ListView.separated(
+                  scrollDirection: Axis.vertical,
+                  shrinkWrap: true,
+                  itemBuilder: (context, int index) {
+                    return buildContainerItem(
+                         context,
+                         item[index].image,
+                         item[index].name,
+                         item[index].price,
+                         item[index].time,
+                         index,
+                         item[index].isSelected);
+                  },
+                  itemCount:item.length, separatorBuilder: (BuildContext context, int index) {return  SizedBox(height: 32,); },),
+              const SizedBox(
+                height: 32,
+              ),
+              DefaultMaterialButton(
+                text: 'done',
+                onPressed: () {
+                  Navigator.pushNamed(context, choseDriverPage);
                 },
-                itemCount:item.length, separatorBuilder: (BuildContext context, int index) {return  SizedBox(height: 32,); },),
-            const SizedBox(
-              height: 32,
-            ),
-            DefaultMaterialButton(
-              text: 'done',
-              onPressed: () {
-                Navigator.pushNamed(context, choseDriverPage);
-              },
-            )
-          ],
+              )
+            ],
+          ),
         ),
       ),
     );
