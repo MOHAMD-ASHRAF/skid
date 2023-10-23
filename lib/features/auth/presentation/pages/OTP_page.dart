@@ -7,6 +7,7 @@ import 'package:skid/core/component/default_button.dart';
 import 'package:skid/core/constant/string.dart';
 import 'package:skid/features/auth/presentation/cubit/phone_auth_cubit.dart';
 import 'package:skid/features/auth/presentation/widgets/background_widget.dart';
+import 'package:skid/features/auth/presentation/widgets/show_Progress_indicator.dart';
 
 
 class OtpPage extends StatelessWidget {
@@ -116,6 +117,8 @@ class OtpPage extends StatelessWidget {
                         focusedPinTheme: defaultPinTheme.copyWith(
                           decoration: defaultPinTheme.decoration!.copyWith(
                             border: Border.all(color: Colors.green)
+
+                                
                           )
                         ),
                         onCompleted: (pin) {
@@ -144,25 +147,5 @@ class OtpPage extends StatelessWidget {
         ],
       ),
     );
-  }
-
-  void showProgressIndicator(BuildContext context) {
-    AlertDialog alertDialog = const AlertDialog(
-      backgroundColor: Colors.transparent,
-      elevation: 0,
-      content: Center(
-        child: CircularProgressIndicator(
-          valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
-        ),
-      ),
-    );
-    showDialog(
-        context: context,
-        barrierColor: Colors.white.withOpacity(0),
-
-        barrierDismissible: false,
-        builder: (context) {
-          return alertDialog;
-        });
   }
 }

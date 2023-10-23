@@ -10,12 +10,14 @@ import 'package:skid/features/auth/presentation/cubit/phone_auth_cubit.dart';
 import 'package:skid/features/auth/presentation/widgets/background_widget.dart';
 import 'package:skid/features/auth/presentation/widgets/build_intro_text.dart';
 import 'package:skid/features/auth/presentation/widgets/flag_widget.dart';
+import 'package:skid/features/auth/presentation/widgets/show_Progress_indicator.dart';
 
 
 class EnterPhonePage extends StatelessWidget {
   EnterPhonePage({Key? key}) : super(key: key);
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
   late String phoneNumber ;
+
   Future<void> _register(BuildContext context)async {
     if(!_formKey.currentState!.validate()){
       Navigator.pop(context);
@@ -142,22 +144,5 @@ class EnterPhonePage extends StatelessWidget {
     );
   }
 
-  void showProgressIndicator(BuildContext context) {
-    AlertDialog alertDialog = const AlertDialog(
-      backgroundColor: Colors.transparent,
-      elevation: 0,
-      content: Center(
-        child: CircularProgressIndicator(
-          valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
-        ),
-      ),
-    );
-    showDialog(
-        context: context,
-        barrierColor: Colors.white.withOpacity(0),
-        barrierDismissible: false,
-        builder: (context) {
-          return alertDialog;
-        });
-  }
+
 }

@@ -5,6 +5,7 @@ import 'package:skid/core/component/default_text_form_feild.dart';
 import 'package:skid/core/component/test_widget.dart';
 import 'package:skid/core/constant/string.dart';
 import 'package:skid/features/auth/presentation/cubit/phone_auth_cubit.dart';
+import 'package:skid/features/auth/presentation/widgets/show_Progress_indicator.dart';
 
 
 // ignore: must_be_immutable
@@ -94,24 +95,4 @@ class LoginPage extends StatelessWidget {
       },
     );
   }
-
-  void showProgressIndicator(BuildContext context) {
-    AlertDialog alertDialog = const AlertDialog(
-      backgroundColor: Colors.transparent,
-      elevation: 0,
-      content: Center(
-        child: CircularProgressIndicator(
-          valueColor: AlwaysStoppedAnimation<Color>(Colors.black),
-        ),
-      ),
-    );
-    showDialog(
-        context: context,
-        barrierColor: Colors.white.withOpacity(0),
-        barrierDismissible: false,
-        builder: (context) {
-          return alertDialog;
-        });
-  }
-
 }

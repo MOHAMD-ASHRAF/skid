@@ -17,7 +17,6 @@ import 'package:skid/features/skid/presentation/pages/take_photo_page.dart';
 import 'package:skid/features/skid/presentation/pages/track_progress_page.dart';
 import 'package:skid/features/skid/presentation/pages/vehicle_type.dart';
 import 'package:skid/features/skid/presentation/widgets/person_delivery_item_model.dart';
-
 class AppRouter {
   PhoneAuthCubit? phoneAuthCubit;
 
