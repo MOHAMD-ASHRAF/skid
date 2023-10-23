@@ -8,7 +8,7 @@ import 'package:skid/features/auth/presentation/cubit/phone_auth_cubit.dart';
 import 'package:skid/features/auth/presentation/widgets/show_Progress_indicator.dart';
 
 
-// ignore: must_be_immutable
+
 class LoginPage extends StatelessWidget {
   LoginPage({Key? key,}) : super(key: key);
 

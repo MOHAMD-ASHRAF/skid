@@ -19,7 +19,6 @@ import 'package:skid/features/skid/presentation/pages/vehicle_type.dart';
 import 'package:skid/features/skid/presentation/widgets/person_delivery_item_model.dart';
 class AppRouter {
   PhoneAuthCubit? phoneAuthCubit;
-
   AppRouter() {
     phoneAuthCubit = PhoneAuthCubit();
   }

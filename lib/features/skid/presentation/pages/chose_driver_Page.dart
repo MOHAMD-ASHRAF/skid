@@ -5,8 +5,8 @@ import 'package:skid/core/constant/my_color.dart';
 import 'package:skid/core/constant/string.dart';
 
 import 'package:skid/features/skid/presentation/widgets/chose_driver_Item.dart';
+import 'package:skid/features/skid/presentation/widgets/head_of_chose_driver_page.dart';
 import 'package:skid/features/skid/presentation/widgets/person_delivery_item_model.dart';
-
 
 class ChoseDriverPage extends StatefulWidget {
   const ChoseDriverPage({super.key});
@@ -35,7 +35,7 @@ class _ChoseDriverPageState extends State<ChoseDriverPage> {
           padding: const EdgeInsets.symmetric(horizontal: 20),
           child: Column(
             children: [
-              buildContainer(),
+              headOfChoseDriverPage(),
               const TextWidget(
                 text: 'chose one',
                 fontSize: 18,
@@ -48,15 +48,15 @@ class _ChoseDriverPageState extends State<ChoseDriverPage> {
                 child: ListView.separated(
                   physics: const BouncingScrollPhysics(),
                   itemBuilder: (context, index) => ChoseDriverItem(
-                    image: item[index].image,
-                    name: item[index].name,
-                    time: item[index].time,
-                    rate: item[index].rate,
-                    phone: item[index].phone,
-                    onTap: (){
-                      Navigator.pushNamed(context, trackProgressPage,arguments: item[index]);
-                    }
-                  ),
+                      image: item[index].image,
+                      name: item[index].name,
+                      time: item[index].time,
+                      rate: item[index].rate,
+                      phone: item[index].phone,
+                      onTap: () {
+                        Navigator.pushNamed(context, trackProgressPage,
+                            arguments: item[index]);
+                      }),
                   separatorBuilder: (BuildContext context, int index) =>
                       const SizedBox(
                     height: 32,
@@ -67,25 +67,5 @@ class _ChoseDriverPageState extends State<ChoseDriverPage> {
             ],
           ),
         ));
-  }
-
-  Container buildContainer() {
-    return Container(
-      width: 220,
-      height: 53,
-      decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(28), color: Colors.grey.shade300),
-      child: Center(
-          child: RichText(
-        text: const TextSpan(children: [
-          TextSpan(
-              text: '4 bike ',
-              style: TextStyle(color: MyColor.green, fontSize: 18)),
-          TextSpan(
-              text: 'close to you',
-              style: TextStyle(color: Colors.black, fontSize: 18))
-        ]),
-      )),
-    );
   }
 }

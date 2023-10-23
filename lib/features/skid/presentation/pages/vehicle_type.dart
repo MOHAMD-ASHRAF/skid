@@ -35,7 +35,7 @@ class _VehicleTypePageState extends State<VehicleTypePage> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const TextWidget(
-              text: 'select a Vehile Type',
+              text: 'select a Vehicle Type',
               fontSize: 32,
             ),
             const SizedBox(

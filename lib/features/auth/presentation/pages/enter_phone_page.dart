@@ -108,7 +108,7 @@ class EnterPhonePage extends StatelessWidget {
                                   phoneNumber = value!;
                                 },
                                 decoration: const InputDecoration(
-                                  hintText: ' 000 000 000',
+                                  hintText: '000 000 000',
                                   enabledBorder: UnderlineInputBorder(
                                       borderSide:
                                           BorderSide(color: MyColor.green)),

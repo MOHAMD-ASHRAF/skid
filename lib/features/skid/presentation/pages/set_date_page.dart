@@ -14,13 +14,11 @@ class SetDatePage extends StatefulWidget {
 
 class _SetDatePageState extends State<SetDatePage> {
   late DateTime dateTime;
-
   @override
   void initState() {
     dateTime = DateTime.now();
     super.initState();
   }
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
