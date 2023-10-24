@@ -3,7 +3,7 @@ import 'package:quickalert/quickalert.dart';
 import 'package:skid/core/component/test_widget.dart';
 import 'package:skid/core/constant/my_color.dart';
 import 'package:skid/core/constant/string.dart';
-
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 class BodyOfTrackProgressPage extends StatelessWidget {
   const BodyOfTrackProgressPage({
     super.key,
@@ -16,9 +16,9 @@ class BodyOfTrackProgressPage extends StatelessWidget {
         const SizedBox(
           height: 16,
         ),
-        const TextWidget(
+         TextWidget(
           text: 'Track Progress',
-          fontSize: 16,
+          fontSize: 16.sp,
           fontWeight: FontWeight.bold,
         ),
 
@@ -28,8 +28,8 @@ class BodyOfTrackProgressPage extends StatelessWidget {
               color: MyColor.darkGreen,
               thickness: 1.8,
             )),
-        const SizedBox(
-          height: 16,
+         SizedBox(
+          height: 8.h,
         ),
         Row(
           children: [
@@ -38,7 +38,7 @@ class BodyOfTrackProgressPage extends StatelessWidget {
             Expanded(
               child: Container(
                 padding: const EdgeInsets.all(12),
-                height: 135,
+                height: 100.h,
                 width: double.infinity,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
@@ -55,9 +55,9 @@ class BodyOfTrackProgressPage extends StatelessWidget {
                 child:  Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const TextWidget(
+                     TextWidget(
                       text: 'Are you Satisfied the job ?',
-                      fontSize: 18,
+                      fontSize: 18.sp,
                       color: Colors.white,
                       fontWeight: FontWeight.bold,
                     ),
@@ -122,7 +122,7 @@ class BodyOfTrackProgressPage extends StatelessWidget {
             ),
           ],
         ),
-        const SizedBox(height: 32,),
+         SizedBox(height: 12.h,),
         Row(
           children: [
             const CircleAvatar(radius: 8,backgroundColor: MyColor.green,),
@@ -130,22 +130,22 @@ class BodyOfTrackProgressPage extends StatelessWidget {
             Expanded(
               child: Container(
                   padding: const EdgeInsets.all(12),
-                  height: 202,
+                  height: 160.h,
                   width: double.infinity,
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
                       color: MyColor.offWhite),
                   child:  Column(
                     children: [
-                      const Row(
+                       Row(
                         children: [
-                          Icon(Icons.check_circle_outline,color: Colors.green,),
-                          SizedBox(width: 8,),
-                          TextWidget(text: 'Package has been picked up', fontSize: 18),
-                          Spacer(),
-                          Align(
+                          const Icon(Icons.check_circle_outline,color: Colors.green,),
+                          const SizedBox(width: 8,),
+                          TextWidget(text: 'Package has been picked up', fontSize: 16.sp),
+                          const Spacer(),
+                           Align(
                               alignment: Alignment.bottomRight,
-                              child: TextWidget(text: '3:30 pm', fontSize: 14,color: Colors.grey,)),
+                              child: TextWidget(text: '3:30 pm', fontSize: 12.sp,color: Colors.grey,)),
                         ],
                       ),
                       const SizedBox(height: 8,),
@@ -163,9 +163,7 @@ class BodyOfTrackProgressPage extends StatelessWidget {
             ),
           ],
         ),
-        const SizedBox(
-          height: 32,
-        ),
+        SizedBox(height: 12.h,),
         Row(
           children: [
             const CircleAvatar(radius: 8,backgroundColor: MyColor.offWhite,),
@@ -177,16 +175,16 @@ class BodyOfTrackProgressPage extends StatelessWidget {
                 decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(20),
                     color: MyColor.offWhite),
-                child: const Center(
+                child:  Center(
                   child: ListTile(
                     leading: TextWidget(
                       text: 'Delivery in progress',
-                      fontSize: 18,
+                      fontSize: 16.sp,
                       fontWeight: FontWeight.bold,
                     ),
                     trailing: TextWidget(
                       text: '4:47 pm',
-                      fontSize: 14,
+                      fontSize: 12.sp,
                       color: Colors.grey,
                     ),
                   ),
@@ -195,8 +193,7 @@ class BodyOfTrackProgressPage extends StatelessWidget {
             ),
           ],
         ),
-        const SizedBox(
-          height: 32,),
+        SizedBox(height: 12.h,),
         Row(
           children: [
             const CircleAvatar(radius: 8,backgroundColor: MyColor.offWhite,),
@@ -209,23 +206,22 @@ class BodyOfTrackProgressPage extends StatelessWidget {
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
                       color: MyColor.offWhite),
-                  child: const Row(
+                  child:  Row(
                     children: [
-                      Icon(Icons.check_circle_outline,color: Colors.green,),
-                      SizedBox(width: 8,),
-                      TextWidget(text: 'Package has been picked up', fontSize: 18),
-                      Spacer(),
+                      const Icon(Icons.check_circle_outline,color: Colors.green,),
+                      const SizedBox(width: 8,),
+                      TextWidget(text: 'Package has been picked up', fontSize: 16.sp),
+                      const Spacer(),
                       Align(
                           alignment: Alignment.bottomRight,
-                          child: TextWidget(text: '3:30 pm', fontSize: 14,color: Colors.grey,)),
+                          child: TextWidget(text: '3:30 pm', fontSize: 12.sp,color: Colors.grey,)),
                     ],
                   )
               ),
             ),
           ],
         ),
-        const SizedBox(
-          height: 32,),
+        SizedBox(height: 12.h,),
         Row(
           children: [
             const CircleAvatar(radius: 8,backgroundColor: MyColor.offWhite,),
@@ -238,18 +234,18 @@ class BodyOfTrackProgressPage extends StatelessWidget {
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
                       color: MyColor.offWhite),
-                  child: const Row(
+                  child:  Row(
                     children: [
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          TextWidget(text: 'Invoice Generated', fontSize: 18,fontWeight: FontWeight.bold,),
-                          TextWidget(text: 'Call Out charge will be refunded ', fontSize: 16),
-                          TextWidget(text: 'acceptance  ', fontSize: 16),
+                          TextWidget(text: 'Invoice Generated', fontSize: 16.sp,fontWeight: FontWeight.bold,),
+                          TextWidget(text: 'Call Out charge will be refunded ', fontSize: 14.sp),
+                          TextWidget(text: 'acceptance  ', fontSize: 14.sp),
                         ],
                       ),
-                      Spacer(),
-                      Align(
+                      const Spacer(),
+                      const Align(
                           alignment: Alignment.bottomRight,
                           child: TextWidget(text: '3:05 pm', fontSize: 14,color: Colors.grey,)),
                     ],
@@ -258,8 +254,7 @@ class BodyOfTrackProgressPage extends StatelessWidget {
             ),
           ],
         ),
-        const SizedBox(
-          height: 32,),
+        SizedBox(height: 12.h,),
         Row(
           children: [
             const CircleAvatar(radius: 8,backgroundColor: MyColor.offWhite,),
@@ -272,22 +267,22 @@ class BodyOfTrackProgressPage extends StatelessWidget {
                   decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),
                       color: MyColor.offWhite),
-                  child: const Row(
+                  child:  Row(
                     children: [
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          TextWidget(text: 'Rider has Arrived at the location', fontSize: 18,fontWeight: FontWeight.bold,),
-                          SizedBox(
+                          TextWidget(text: 'Rider has Arrived at the location', fontSize: 16.sp,fontWeight: FontWeight.bold,),
+                          const SizedBox(
                             height: 18,
                           ),
-                          TextWidget(text: 'Rider has arrived', fontSize: 16),
+                          TextWidget(text: 'Rider has arrived', fontSize: 14.sp),
                         ],
                       ),
-                      Spacer(),
+                      const Spacer(),
                       Align(
                           alignment: Alignment.bottomRight,
-                          child: TextWidget(text: '3:00 pm', fontSize: 14,color: Colors.grey,)),
+                          child: TextWidget(text: '3:00 pm', fontSize: 12.sp,color: Colors.grey,)),
                     ],
                   )
               ),
