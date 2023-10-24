@@ -29,8 +29,13 @@ class OtpPage extends StatelessWidget {
     ),
   );
 
-  Widget _buildPhoneVerificationBloc() {
-    return BlocListener<PhoneAuthCubit, PhoneAuthState>(
+  void _login(BuildContext context) {
+    BlocProvider.of<PhoneAuthCubit>(context).submitOTP(otpCode);
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return BlocConsumer<PhoneAuthCubit, PhoneAuthState>(
       listenWhen: (previous, current) {
         return previous != current;
       },
@@ -52,94 +57,89 @@ class OtpPage extends StatelessWidget {
           ));
         }
       },
-      child: Container(),
-    );
-  }
-
-  void _login(BuildContext context) {
-    BlocProvider.of<PhoneAuthCubit>(context).submitOTP(otpCode);
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      body: Stack(
-        children: [
-          const BackGroundWidget(),
-          Align(
-            alignment: Alignment.bottomCenter,
-            child: Container(
-              height: 245.h,
-              width: double.infinity,
-              color: Colors.white,
-              child: SingleChildScrollView(
-                child: Form(
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const SizedBox(
-                          height: 20,
-                        ),
-                        const Text(
-                          "Confirm OTP",
-                          style: TextStyle(
-                              fontSize: 20, fontWeight: FontWeight.bold),
-                        ),
-                        const SizedBox(
-                          height: 40,
-                        ),
-                        Row(
+      builder: (context, state) {
+        return Scaffold(
+          body: Stack(
+            children: [
+              const BackGroundWidget(),
+              Align(
+                alignment: Alignment.bottomCenter,
+                child: Container(
+                  height: 245.h,
+                  width: double.infinity,
+                  color: Colors.white,
+                  child: SingleChildScrollView(
+                    child: Form(
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
+                            const SizedBox(
+                              height: 20,
+                            ),
                             const Text(
-                              "A OTP SENT TO ",
-                              style: TextStyle(fontSize: 15, color: Colors.grey),
+                              "Confirm OTP",
+                              style: TextStyle(
+                                  fontSize: 20, fontWeight: FontWeight.bold),
                             ),
-                            Text(
-                              " $phoneNumber ",
-                              style: const TextStyle(
-                                  fontSize: 15, color: Colors.green),
+                            const SizedBox(
+                              height: 40,
                             ),
+                            Row(
+                              children: [
+                                const Text(
+                                  "A OTP SENT TO ",
+                                  style: TextStyle(
+                                      fontSize: 15, color: Colors.grey),
+                                ),
+                                Text(
+                                  " $phoneNumber ",
+                                  style: const TextStyle(
+                                      fontSize: 15, color: Colors.green),
+                                ),
+                              ],
+                            ),
+                            const Text(
+                              "kind enter below  the 6 digital code ",
+                              style: TextStyle(
+                                  fontSize: 15, color: Colors.grey),
+                            ),
+                            const SizedBox(
+                              height: 20,
+                            ),
+                            Pinput(
+                              length: 6,
+                              defaultPinTheme: defaultPinTheme,
+                              focusedPinTheme: defaultPinTheme.copyWith(
+                                  decoration: defaultPinTheme.decoration!
+                                      .copyWith(
+                                      border: Border.all(color: Colors.green))),
+                              onCompleted: (pin) {
+                                otpCode = pin;
+                                print("Completed $otpCode");
+                              },
+                            ),
+                            const SizedBox(
+                              height: 16,
+                            ),
+                            DefaultMaterialButton(
+                                text: 'verify',
+                                onPressed: () {
+                                  showProgressIndicator(context);
+                                  _login(context);
+                                }),
                           ],
                         ),
-                        const Text(
-                          "kind enter below  the 6 digital code ",
-                          style: TextStyle(fontSize: 15, color: Colors.grey),
-                        ),
-                        const SizedBox(
-                          height: 20,
-                        ),
-                        Pinput(
-                          length: 6,
-                          defaultPinTheme: defaultPinTheme,
-                          focusedPinTheme: defaultPinTheme.copyWith(
-                              decoration: defaultPinTheme.decoration!.copyWith(
-                                  border: Border.all(color: Colors.green))),
-                          onCompleted: (pin) {
-                            otpCode = pin;
-                            print("Completed $otpCode");
-                          },
-                        ),
-                        const SizedBox(
-                          height: 16,
-                        ),
-                        DefaultMaterialButton(
-                            text: 'verify',
-                            onPressed: () {
-                              showProgressIndicator(context);
-                              _login(context);
-                            }),
-                        _buildPhoneVerificationBloc(),
-                      ],
+                      ),
                     ),
                   ),
                 ),
               ),
-            ),
+            ],
           ),
-        ],
-      ),
+        );
+      },
     );
   }
 }

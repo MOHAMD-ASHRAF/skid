@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:skid/core/component/default_appbar.dart';
 import 'package:skid/core/component/default_button.dart';
 import 'package:skid/core/component/test_widget.dart';
@@ -35,12 +36,12 @@ class _VehicleTypePageState extends State<VehicleTypePage> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const TextWidget(
+               TextWidget(
                 text: 'select a Vehicle Type',
-                fontSize: 32,
+                fontSize: 26.sp,
               ),
-              const SizedBox(
-                height: 32,
+               SizedBox(
+                height: 24.h,
               ),
               ListView.separated(
                   scrollDirection: Axis.vertical,
@@ -55,7 +56,7 @@ class _VehicleTypePageState extends State<VehicleTypePage> {
                          index,
                          item[index].isSelected);
                   },
-                  itemCount:item.length, separatorBuilder: (BuildContext context, int index) {return  SizedBox(height: 32,); },),
+                  itemCount:item.length, separatorBuilder: (BuildContext context, int index) {return  SizedBox(height: 16.h,); },),
               const SizedBox(
                 height: 32,
               ),
@@ -88,7 +89,7 @@ class _VehicleTypePageState extends State<VehicleTypePage> {
       },
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 15),
-        height: 110,
+       height: 95.h,
         decoration: BoxDecoration(
           border: Border.all(
             width: isSelected ? 1.8 : 1,

@@ -1,5 +1,4 @@
 
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -28,33 +27,29 @@ class EnterPhonePage extends StatelessWidget {
     }
   }
 
-  Widget _buildPhoneNumberSubmitBloc() {
-    return BlocListener<PhoneAuthCubit, PhoneAuthState>(
+  @override
+  Widget build(BuildContext context) {
+    return BlocConsumer<PhoneAuthCubit, PhoneAuthState>(
       listenWhen: (previous, current) {
         return previous != current;
       },
       listener: (context, state) {
-         if (state is LoadingState) {
-          showProgressIndicator(context);
-        }  if (state is PhoneNumberSubmitedState) {
-          Navigator.pop(context);
-          Navigator.pushNamed(context, otpPage, arguments: phoneNumber);
-        }  if (state is PhoneAuthErrorState) {
-          Navigator.pop(context);
-          String message = (state).messageError;
-          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-            content: Text(message),
-            backgroundColor: Colors.black,
-            duration: const Duration(seconds: 3),
-          ));
-        }
+       if (state is LoadingState) {
+         showProgressIndicator(context);
+       }  if (state is PhoneNumberSubmitedState) {
+         Navigator.pop(context);
+         Navigator.pushNamed(context, otpPage, arguments: phoneNumber);
+       }  if (state is PhoneAuthErrorState) {
+         Navigator.pop(context);
+         String message = (state).messageError;
+         ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+           content: Text(message),
+           backgroundColor: Colors.black,
+           duration: const Duration(seconds: 3),
+         ));
+       }
       },
-      child: Container(),
-    );
-  }
-
-  @override
-  Widget build(BuildContext context) {
+  builder: (context, state) {
     return Scaffold(
       body: Stack(
         children: [
@@ -131,7 +126,7 @@ class EnterPhonePage extends StatelessWidget {
                                   _register(context);
                             })
                         ),
-                        _buildPhoneNumberSubmitBloc(),
+                       // _buildPhoneNumberSubmitBloc(),
                       ],
                     ),
                   ),
@@ -142,6 +137,8 @@ class EnterPhonePage extends StatelessWidget {
         ],
       ),
     );
+  },
+);
   }
 
 

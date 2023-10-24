@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:skid/core/component/default_appbar.dart';
 import 'package:skid/core/component/test_widget.dart';
 import 'package:skid/core/constant/my_color.dart';
@@ -58,8 +59,8 @@ class _ChoseDriverPageState extends State<ChoseDriverPage> {
                             arguments: item[index]);
                       }),
                   separatorBuilder: (BuildContext context, int index) =>
-                      const SizedBox(
-                    height: 32,
+                       SizedBox(
+                    height: 18.h,
                   ),
                   itemCount: item.length,
                 ),

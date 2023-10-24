@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:skid/core/component/test_widget.dart';
 import 'package:skid/core/constant/my_color.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -30,7 +31,7 @@ class ChoseDriverItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
-      height: 250,
+      height: 220.h,
       decoration: BoxDecoration(
         border: Border.all(width: 1, color: Colors.green),
         borderRadius: BorderRadius.circular(10),
@@ -56,14 +57,14 @@ class ChoseDriverItem extends StatelessWidget {
                 ),
                 title: TextWidget(
                   text: name,
-                  fontSize: 16,
+                  fontSize: 16.sp,
                   color: Colors.white,
                 ),
                 subtitle: Row(
                   children: [
                     TextWidget(
                       text: rate,
-                      fontSize: 12,
+                      fontSize: 12.sp,
                       color: Colors.white,
                     ),
                     const Icon(
@@ -75,20 +76,20 @@ class ChoseDriverItem extends StatelessWidget {
                 ),
                 trailing: TextWidget(
                   text: '$time mins away',
-                  fontSize: 12,
+                  fontSize: 12.sp,
                   color: Colors.white,
                 ),
               ),
             ),
           ),
           ListTile(
-            title: const TextWidget(
+            title:  TextWidget(
               text: 'status',
-              fontSize: 18,
+              fontSize: 18.sp,
             ),
-            subtitle: const TextWidget(
+            subtitle:  TextWidget(
               text: 'Finding a Rider for you...',
-              fontSize: 16,
+              fontSize: 16.sp,
               color: MyColor.darkGreen,
               fontWeight: FontWeight.bold,
             ),
@@ -104,9 +105,9 @@ class ChoseDriverItem extends StatelessWidget {
             ),
           ),
           ListTile(
-            title: const TextWidget(
+            title:  TextWidget(
               text: 'Cancel',
-              fontSize: 15,
+              fontSize: 15.sp,
               color: MyColor.darkGreen,
             ),
             trailing: GestureDetector(
@@ -118,10 +119,10 @@ class ChoseDriverItem extends StatelessWidget {
                 ),
                 width: 123,
                 height: 46,
-                child: const Center(
+                child:  Center(
                     child: TextWidget(
                       text: 'view progress',
-                      fontSize: 16,
+                      fontSize: 16.sp,
                       fontWeight: FontWeight.bold,
                     )),
               ),

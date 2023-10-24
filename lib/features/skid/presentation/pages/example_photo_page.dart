@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:skid/core/component/default_appbar.dart';
 import 'package:skid/core/component/default_button.dart';
 import 'package:skid/core/component/test_widget.dart';
@@ -36,28 +37,28 @@ class ExamplePhotoPage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const TextWidget(text: 'Take a picture of the item', fontSize: 26,fontWeight: FontWeight.bold,),
-              const SizedBox(
-                height: 20,
+               TextWidget(text: 'Take a picture of the item', fontSize: 22.sp,fontWeight: FontWeight.bold,),
+               SizedBox(
+                height: 12.h,
               ),
               const TextWidget(text: 'Please note: Take picture of your parcel close to a recognisable object such as a chair ,pen , etc', fontSize: 14),
-              const SizedBox(
-                height: 30,
+               SizedBox(
+                height: 24.h,
               ),
               _exampleImage(context: context, imageUrl: 'assets/images/object.gif', text: 'Example 1'),
-              const SizedBox(
-                height: 30,
+              SizedBox(
+                height: 24.h,
               ),
               _exampleImage(context: context, imageUrl: 'assets/images/laptop.jpg', text: 'Example 2'),
               const SizedBox(
                 height: 20,
               ),
               const TextWidget(text: 'If you do not follow this instruction, your order request will not be valid ', fontSize: 14,color: MyColor.green,fontWeight: FontWeight.bold,),
-              const SizedBox(
-                height: 24,
+              SizedBox(
+                height: 12.h,
               ),
               DefaultMaterialButton(
-                text: 'TAlk A Photo',
+                text: 'Talk A Photo',
                 onPressed: () {
                   openDialog(context);
                 },
