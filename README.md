@@ -1,6 +1,6 @@
 #  photo from project
 
-### About 
+### About skid
 Skid app that deliver anything, anywhere. It is perfect for small stores and businesses that need to deliver goods
 to their customers, as well as individuals who need to send packages or gifts.
 
