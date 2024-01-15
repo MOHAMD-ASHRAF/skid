@@ -10,8 +10,8 @@ to their customers, as well as individuals who need to send packages or gifts.
 • Used Firebase Auth to authenticate users(OTP).
 • Used Firestore to save data.
 • Used Clean Architecture to design and develop a modular.
-• Used simple animation
-• Responsive Ui design
+• Used simple animation.
+• Responsive Ui design.
 
 #### Ahuth 
 Used Firebase Auth to authenticate users(OTP).
