@@ -3,7 +3,7 @@
 ## 🎿 :lets statr
 ### About skid
 Skid app that deliver anything, anywhere. It is perfect for small stores and businesses that need to deliver goods
-to their customers, as well as individuals who need to send packages or gifts.
+to their customers, as well as individuals who need to send packages or gifts
 
 🔵 Techonlogies Used:
 • Used Cubit to manage the state of the application.
